@@ -1,0 +1,549 @@
+html {
+    scroll-behavior: smooth;
+  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Estilo del menú */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    color: white;
+    padding: 20px 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* ✅ Color del texto del menú en estado inicial */
+.menu a {
+    position: relative;
+    padding: 10px;
+    text-decoration: none;
+    color: white; /* Blanco al inicio */
+    transition: color 0.3s ease-in-out;
+}
+
+/* ✅ Cambiar color cuando el usuario hace scroll */
+.menu.menu-active {
+    background-color: white; /* Cambia el fondo a blanco */
+}
+
+/* ✅ Cambiar color del texto cuando el fondo es blanco */
+.menu.menu-active a {
+    color: black;
+}
+
+/* ✅ Subrayado animado */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: #003797;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+
+/* Imagen 3, inicialmente oculta */
+.menu-item {
+    position: absolute;
+    transition: all 1s ease;
+    width: 60px; /* Ajustar el tamaño de la imagen */
+    height: 60px; /* Ajustar el tamaño de la imagen */
+    display: none; /* Se oculta inicialmente */
+}
+
+.menu img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    margin: 0;
+}
+
+.menu ul li {
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+/* Imagen principal ocupa toda la pantalla */
+.contenedor-imagen-principal {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    
+}
+
+.imagen-principal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contenido centrado sobre la imagen principal */
+.contenido-central {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+    opacity: 1; /* Asegúrate de que no esté oculto */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Añadir animación de transformación */
+}
+
+.scroll-active .contenido-central {
+    opacity: 0;
+    transform: translate(-50%, -100%); /* Hacer que el texto se mueva hacia arriba */
+}
+
+
+.imagen-secundaria {
+    max-width: 70%; /* Ajusta el tamaño de la imagen 2 */
+    height: auto;
+    transition: transform 1s ease-in-out; /* Agrega animación para movimiento de la imagen */
+}
+
+.scroll-active .imagen-secundaria {
+    transform: scale(0.8); /* Disminuir el tamaño de la imagen al hacer scroll */
+}
+
+.contenido-central p {
+    font-size: 45px;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Cuerpo de la página */
+.productos {
+    background-color: white;
+    padding: 50px 20px;
+    height: 1500px; /* Para mostrar contenido largo */
+}
+
+/* Estilos cuando se activa la animación de scroll */
+.imagen-principal.scrolled {
+    transform: translateY(-100vh);
+    transition: transform 1s ease-in-out;
+}
+
+.menu-active {
+    background-color: white;
+}
+
+.menu-active ul li {
+    color: #333 !important;  /* Color de texto cuando el fondo es blanco */
+}
+
+/* Cuando se hace scroll, imagen 3 pasa a la izquierda */
+.menu-active .menu-item {
+    position: fixed;
+    top: 20px;
+    left: 20px; /* Mueve la imagen al lado izquierdo */
+    transform: translateX(0); /* Mantenla alineada a la izquierda */
+    width: 200px;
+    height: 50px;
+    display: block; /* La imagen 3 se hace visible */
+    transition: all 1s ease;
+}
+
+/* Cuando el contenido hace scroll, cambia el fondo a blanco */
+.scroll-active {
+    background-color: white;
+}
+
+/* Hacer que el texto desaparezca */
+.contenido-central {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+
+/* ********************************** Estilos de prodcutos *********************************************** */
+/* Resto de tu código */
+
+/* Estilo de la sección */
+.section {
+    position: relative;
+    height: 400px;  /* La altura de la sección, puedes ajustarlo según lo necesites */
+    margin: 1rem 0;
+    overflow: hidden;
+    scroll-margin-top: 100px; /* Ajusta este valor según la altura de tu menú */
+    padding-top: 50px; /* Ajusta según tu diseño */
+}
+
+.section-content {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center; /* Centra el contenido dentro de la sección */
+    position: relative;
+    height: 100%; /* Ocupa toda la altura de la sección */
+    width: 100%;  /* Ocupa todo el ancho */
+}
+
+.section-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Mantiene la imagen cubriendo toda el área sin distorsionarse */
+    z-index: 0;
+    border-radius: 20px;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Asegura que el cuadro de texto ocupe todo el contenedor */
+    z-index: 1;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);  /* Fondo oscuro con algo de transparencia */
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+/* Estilo para el nombre "miNotaría" */
+.mi-notaria-text {
+    font-size: 5rem;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Estilo para el texto de información */
+.info-text {
+    font-size: 1.5rem;
+    color: white;
+    opacity: 0;  /* Inicia oculto */
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);  /* Fondo oscuro con opacidad */
+    border-radius: 10px;  /* Bordes redondeados */
+}
+
+/* Cuando pasas el cursor sobre el contenedor */
+.section-content:hover .mi-notaria-text {
+    opacity: 0;  /* Oculta el nombre "miNotaría" */
+}
+
+.section-content:hover .info-text {
+    opacity: 1;  /* Muestra el texto de información */
+    font-size: 1.5rem;
+    width: 90%;
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+
+
+
+/* *************************** section de capacitaciones ******************************************** */
+
+.capacitaciones {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #f8f9fa;
+    position: relative;
+}
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+}
+.carousel {
+    width: 100%;
+    overflow: hidden;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+.cap {
+    min-width: 300px;
+    height: 200px;
+    position: relative;
+    margin: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.cap:hover {
+    transform: scale(1.1);
+}
+.cap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cap-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+.carousel-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.titulo{
+    height: 2cm;
+    font-size: 30px;
+    
+}
+
+
+/* ************************************** section noticias ********************************** */
+
+.capacitaciones, .noticias {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #f8f9fa;
+    position: relative;
+}
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+}
+.carousel {
+    width: 100%;
+    overflow: hidden;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+.cap {
+    min-width: 300px;
+    height: 200px;
+    position: relative;
+    margin: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.cap:hover {
+    transform: scale(1.1);
+}
+.cap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cap-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+.noticias-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.noticia {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.noticia img {
+    width: 100%;
+    height: 4cm;
+    border-radius: 8px;
+}
+.noticia h3 {
+    margin: 10px 0;
+}
+.noticia p {
+    flex-grow: 1;
+}
+
+.ver-mas {
+    background: #003797;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    align-self: center;
+    margin-top: 15px;
+}
+
+.ver-mas:hover {
+    background: #003797;
+}
+
+.btn-noticias {
+    margin-top: 20px;
+    background: #30d805;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn-noticias:hover {
+    background: #218838;
+}
+
+
+
+/* ***************************** section de texto  **********************************/
+
+.informacion_minotaria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.section-title {
+    color: 003797;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease;
+}
+
+.content:hover {
+    transform: translateY(-10px); /* Efecto hover */
+}
+
+.text {
+    flex: 1;
+    font-size: 1.1rem;
+    margin-right: 20px;
+    line-height: 1.6;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    background-image: url('cert.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+}
+
+
+/******************************* Estilos para el footer ***************************/
+.footer {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon img {
+    width: 30px;  /* Ajusta el tamaño */
+    height: 30px; /* Ajusta el tamaño */
+    object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor */
+}
+
+
+.social-icon img:hover {
+    transform: scale(1.2);
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #bbb;
+}
