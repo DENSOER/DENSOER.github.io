@@ -10,9 +10,11 @@
 
     <!-- Menú -->
     <nav class="menu">
+        
         <div class="menu-item">
             <img id="menu-img" src="racoo_minotaria-black.png" alt="Imagen de menú">
         </div>
+       
         <ul>
             <li> <a href="#minotaria">miNotaría</a></li>
             <li> <a href="#uif">UIF</a></li>
@@ -31,9 +33,10 @@
             <img src="unsplash_sobres_corta-scaled.jpg" alt="Imagen principal">
         </div>
         <div class="contenido-central">
+            <div style="height: 1.5cm;"></div>
             <img src="racoo_minotaria-white.png" alt="Imagen secundaria" class="imagen-secundaria">
             <p>Hecho por notarios para notarios</p>
-            <br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
             <p style="font-size: 35px;">sistema integral y/o módular</p>
         </div>
     </div>
@@ -42,168 +45,167 @@
 
     <!-- Cuerpo de la página (productos, etc.) -->
 
-    <div style="height: 1cm;"></div>
-
     <section class="productos">
-        <main class="Vertical">
-            <section class="section" id="minotaria"> <!-- Cambié el id -->
-                <div class="section-content">
-                    <img src="5.avif" alt="Producto Mi/Notaría">
-                    <div class="text-overlay">                     
-                        <div class="mi-notaria-text">miNotaría</div>
-                        <div class="info-text">El mejor sistema para llevar la administración de todos los procesos de su notaría.</div>
-                    </div>                
+        <!-- Título de la sección -->
+        <h2 class="section-title">Productos</h2>
+      
+        <!-- Sección "miNotaría" Full Width -->
+        <section class="hero-section full-width" id="minotaria">
+          <div class="hero-content">
+            <img src="5.avif" alt="Producto miNotaría">
+            <div class="hero-overlay">
+              <div class="hero-title">miNotaría</div>
+              <div class="hero-info">
+                El mejor sistema para llevar la administración de todos los procesos de su notaría.
+              </div>
+              <button class="cta-button">Más información</button>
+            </div>
+          </div>
+        </section>
+      
+        <!-- Contenedor en grid para las otras secciones -->
+        <div class="grid-container">
+          <!-- Sección UIF -->
+          <section class="hero-section half-width" id="uif">
+            <div class="hero-content">
+              <img src="5.avif" alt="Producto UIF">
+              <div class="hero-overlay">
+                <div class="hero-title">UIF</div>
+                <div class="hero-info">
+                  El mejor sistema para llevar la administración de todos los procesos de su notaría.
                 </div>
-            </section>
-    
-            <section class="section" id="uif"> <!-- Cambié el id -->
-                <div class="section-content">
-                    <img src="5.avif" alt="Producto Mi/Notaría">
-                    <div class="text-overlay">                     
-                        <div class="mi-notaria-text">UIF</div>
-                        <div class="info-text">El mejor sistema para llevar la administración de todos los procesos de su notaría.</div>
-                    </div>                
+                <button class="cta-button">Más información</button>
+              </div>
+            </div>
+          </section>
+      
+          <!-- Sección CFDI -->
+          <section class="hero-section half-width" id="cfdi">
+            <div class="hero-content">
+              <img src="5.avif" alt="Producto CFDI">
+              <div class="hero-overlay">
+                <div class="hero-title">CFDI</div>
+                <div class="hero-info">
+                  El primer sistema para CFDI diseñado para tablets, smartphones y computadoras.
                 </div>
-            </section>
-    
-            <section class="section" id="cfdi"> <!-- Cambié el id -->
-                <div class="section-content">
-                    <img src="5.avif" alt="Producto Mi/Notaría">
-                    <div class="text-overlay">                     
-                        <div class="mi-notaria-text">CFDI</div>
-                        <div class="info-text">El primer sistema para CFDI diseñado para tablets, smartphones y computadoras.</div>
-                    </div>                
+                <button class="cta-button">Más información</button>
+              </div>
+            </div>
+          </section>
+      
+          <!-- Sección Listas PB -->
+          <section class="hero-section half-width" id="listas">
+            <div class="hero-content">
+              <img src="5.avif" alt="Producto Listas PB">
+              <div class="hero-overlay">
+                <div class="hero-title">Listas PB</div>
+                <div class="hero-info">
+                  La forma más sencilla de imprimir tu acuse de las búsquedas realizadas en las listas UIF.
                 </div>
-            </section>
-    
-            <section class="section" id="listas"> <!-- Cambié el id -->
-                <div class="section-content">
-                    <img src="5.avif" alt="Producto Mi/Notaría">
-                    <div class="text-overlay">                     
-                        <div class="mi-notaria-text">Listas PB</div>
-                        <div class="info-text">La forma más sencilla de imprimir tu acuse de las búsquedas realizadas en las listas UIF</div>
-                    </div>                
+                <button class="cta-button">Más información</button>
+              </div>
+            </div>
+          </section>
+      
+          <!-- Sección Cálculo Fácil -->
+          <section class="hero-section half-width" id="calculo">
+            <div class="hero-content">
+              <img src="5.avif" alt="Producto Cálculo Fácil">
+              <div class="hero-overlay">
+                <div class="hero-title">Cálculo Fácil</div>
+                <div class="hero-info">
+                  El mejor sistema para calcular impuestos notariales, exportar al declaranot, llenado de formatos del 5%, consulta de tablas, tarifas y mucho más.
                 </div>
-            </section>
-    
-            <section class="section" id="calculo"> <!-- Cambié el id -->
-                <div class="section-content">
-                    <img src="5.avif" alt="Producto Mi/Notaría">
-                    <div class="text-overlay">                     
-                        <div class="mi-notaria-text">Cálculo Fácil</div>
-                        <div class="info-text">El mejor sistema para calcular impuestos notariales, exportar al declaranot, llenado de formatos del 5%, consulta de tablas, tarifas y mucho más.</div>
-                    </div>                
-                </div>
-            </section>
-        </main>
-    </section>
-    
-
-    <div style="height: 17cm;"></div>
+                <button class="cta-button">Más información</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+      
+        <div style="height: 4cm;"></div>      
 
     
     <!-- Sección de Capacitaciones (Carrusel) -->
-    <section class="capacitaciones" id="certificaciones">
-        <h2 class="titulo" > Certificaciones</h2>
-        <div class="carousel-container">
-            <button id="prevBtn" class="carousel-btn">&#10094;</button>
-            <div class="carousel">
-                <div class="carousel-track">
-                    <div class="cap">
-                        <img src="cert.png" alt="Caja">
-                        <div class="cap-text">Caja</div>
-                    </div>
-                    <div class="cap">
-                        <img src="cert.png" alt="Cálculos">
-                        <div class="cap-text">Cálculos</div>
-                    </div>
-                    <div class="cap">
-                        <img src="cert.png" alt="Cotejo">
-                        <div class="cap-text">Cotejo</div>
-                    </div>
-                    <div class="cap">
-                        <img src="cert.png" alt="Expediente UIF">
-                        <div class="cap-text">Expediente UIF</div>
-                    </div>
-                    <div class="cap">
-                        <img src="cert.png" alt="Expediente">
-                        <div class="cap-text">Expediente</div>
-                    </div>
-                    <div class="cap">
-                        <img src="cert.png" alt="Gestorías">
-                        <div class="cap-text">Gestorías</div>
-                    </div>
-                    <div class="cap">
-                        <img src="cert.png" alt="Protocolo">
-                        <div class="cap-text">Protocolo</div>
-                    </div>
-                    <div class="cap">
-                        <img src="cert.png" alt="UIF completo">
-                        <div class="cap-text">UIF completo</div>
-                    </div>
-                </div>
-            </div>
-            <button id="nextBtn" class="carousel-btn">&#10095;</button>
-        </div>
-    </section>
-
     
+    <div class="carousel-container">
+        <div class="carousel">
+          <button class="arrow left">&#10094;</button>
+          <!-- Título superpuesto -->
+          <h2 class="section-title">Cursos</h2>
+          <div style="height: 0.8cm;"></div>
+          <div class="carousel-viewport">
+            <div class="slide"><img src="cert.png" alt="Slide 1"><div>Expedientes</div></div>
+            <div class="slide"><img src="cert.png" alt="Slide 2"><div>Cálculo Fácil</div></div>
+            <div class="slide"><img src="cert.png" alt="Slide 3"><div>Caja</div></div>
+            <div class="slide"><img src="cert.png" alt="Slide 4"><div>Cotejo</div></div>
+            <div class="slide"><img src="cert.png" alt="Slide 5"><div>Gestorías</div></div>
+            <div class="slide"><img src="cert.png" alt="Slide 6"><div>RIN</div></div>
+            <div class="slide"><img src="cert.png" alt="Slide 7"><div>CFDI</div></div>
+            <div class="slide"><img src="cert.png" alt="Slide 8"><div>Índice</div></div>
+            <div class="slide"><img src="cert.png" alt="Slide 9"><div>Protocolo</div></div>
+            <div class="slide"><img src="cert.png" alt="Slide 10"><div>UIF</div></div>
+          </div>
+          <button class="arrow right">&#10095;</button>
+        </div>
+      </div>
 
-   <!-- Sección de Noticias -->
+      <div style="height: 2cm;"></div>
+
+    <!-- Sección de Noticias -->
     <section class="noticias" id="noticias">
-        <h2 class="titulo">Últimas Noticias</h2>
+        <h2 class="titulo section-title">Últimas Noticias</h2>
         <div class="noticias-container">
-            <div class="noticia">
-                <img src="noticias.jpg" alt="Noticia 1">
-                <h3>Nueva opción en la relación de pagos, para incluir la dirección</h3>
-                <p>Se ha añadido una opción en la relación de pagos para incluir la dirección del inmueble, con la flexibilidad de quitarla según sea necesario.</p>
-                <button class="ver-mas">Ver más</button>
-            </div>
-            <div class="noticia">
-                <img src="noticias.jpg" alt="Noticia 2">
-                <h3>Índice UIF: Nuevo filtro de búsqueda “Ver Extras”</h3>
-                <p>En el Índice UIF, el monto de la operación se mantiene oculto. Para visualizar el monto y habilitar la información completa de la operación, active la opción en la casilla de 'Ver Extras'.</p>
-                <button class="ver-mas">Ver más</button>
-            </div>
-            <div class="noticia">
-                <img src="noticias.jpg" alt="Noticia 3">
-                <h3>Mejora en el módulo QR, para encargados de caja.</h3>
-                <p>Con esta herramienta, los encargados de caja podrán usarla para generar fácilmente las facturas en la página de tesorería de CDMX.</p>
-                <button class="ver-mas">Ver más</button>
-            </div>
+        <div class="noticia">
+            <img src="noticias.jpg" alt="Noticia 1">
+            <h3>Nueva opción en la relación de pagos</h3>
+            <p>Se ha añadido una opción para incluir la dirección del inmueble, con flexibilidad para activarla o desactivarla.</p>
+            <button class="ver-mas">Ver más</button>
+        </div>
+        <div class="noticia">
+            <img src="noticias.jpg" alt="Noticia 2">
+            <h3>Índice UIF: Nuevo filtro “Ver Extras”</h3>
+            <p>Muestra el monto de la operación activando la opción en 'Ver Extras'.</p>
+            <button class="ver-mas">Ver más</button>
+        </div>
+        <div class="noticia">
+            <img src="noticias.jpg" alt="Noticia 3">
+            <h3>Mejora en el módulo QR para caja</h3>
+            <p>Genera facturas de manera sencilla en la página de tesorería de CDMX.</p>
+            <button class="ver-mas">Ver más</button>
+        </div>
         </div>
         <button class="btn-noticias">Ir a Noticias</button>
     </section>
-
-
-    <!-- Sección texto -->
+    
+    <!-- Sección de Información -->
 
     <div class="informacion_minotaria">
         <h2 class="section-title">PROPÓSITO</h2>
         <div class="content">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim. Faucibus amet etiam tincidunt rhoncus, ullamcorper velit. Ullamcorper risus tempor, ac nunc libero urna, feugiat.</p>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae...</p>
             <div class="image"></div>
         </div>
-    
+
         <h2 class="section-title">VALORES HCPC</h2>
         <div class="content">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim. Faucibus amet etiam tincidunt rhoncus, ullamcorper velit. Ullamcorper risus tempor, ac nunc libero urna, feugiat.</p>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae...</p>
             <div class="image"></div>
         </div>
-    
+
         <h2 class="section-title">SOFTWARE</h2>
         <div class="content">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim. Faucibus amet etiam tincidunt rhoncus, ullamcorper velit. Ullamcorper risus tempor, ac nunc libero urna, feugiat.</p>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae...</p>
             <div class="image"></div>
         </div>
-    
+
         <h2 class="section-title">PROCESOS</h2>
         <div class="content">
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae. Est tellus vitae, nullam lobortis enim. Faucibus amet etiam tincidunt rhoncus, ullamcorper velit. Ullamcorper risus tempor, ac nunc libero urna, feugiat.</p>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra nunc ante velit vitae...</p>
             <div class="image"></div>
         </div>
     </div>
-    
+
 
     <!-- Footer con iconos sociales -->
     <footer class="footer">
