@@ -385,9 +385,10 @@ html {
 /* Contenedor del carrusel a pantalla completa con fondo degradado sutil */
 .carousel-container {
     width: 100%;
+    height: auto;
     position: relative;
     background: linear-gradient(135deg, #ffffff, #ffffff);
-    padding: 20px 0;
+    padding: 5px 0;
     box-sizing: border-box;
     perspective: 1200px;
 }
