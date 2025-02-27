@@ -34,54 +34,65 @@ window.addEventListener('scroll', function () {
 });
 
 // ************************** CARRUSEL RESPONSIVE ***************************
-document.addEventListener("DOMContentLoaded", () => {
-    const track = document.querySelector(".carousel-track");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    let caps = document.querySelectorAll(".cap");
-    let capWidth = caps[0]?.offsetWidth + 20 || 300;
-    let index = 0;
+const viewport = document.querySelector('.carousel-viewport');
+    let slides = document.querySelectorAll('.slide');
 
-    function updateCapWidth() {
-        caps = document.querySelectorAll(".cap"); // Actualizar lista de elementos
-        capWidth = caps[0]?.offsetWidth + 20 || 300; // Ajustar ancho al cambiar de tamaño
+    // Clonar el primer y último slide para lograr efecto infinito
+    const firstSlide = slides[0];
+    const lastSlide = slides[slides.length - 1];
+    const firstClone = firstSlide.cloneNode(true);
+    const lastClone = lastSlide.cloneNode(true);
+    firstClone.id = "first-clone";
+    lastClone.id = "last-clone";
+    viewport.appendChild(firstClone);
+    viewport.insertBefore(lastClone, firstSlide);
+
+    // Actualizamos la lista de slides (ahora incluyen los clones)
+    slides = document.querySelectorAll('.slide');
+
+    // El índice real inicia en 1 (primer slide real)
+    let currentIndex = 1;
+
+    function updateCarousel() {
+      const slideWidthPercent = 100 / 3; // Cada slide ocupa 33.33%
+      viewport.style.transform = `translateX(-${(currentIndex - 1) * slideWidthPercent}%)`;
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentIndex);
+      });
     }
 
-    function moveSlide() {
-        track.style.transition = "transform 0.5s ease-in-out";
-        track.style.transform = `translateX(-${index * capWidth}px)`;
-    }
+    const prevBtn = document.querySelector('.arrow.left');
+    const nextBtn = document.querySelector('.arrow.right');
 
-    nextBtn?.addEventListener("click", () => {
-        if (index >= caps.length - 1) {
-            index = 0; // Regresar al inicio
-        } else {
-            index++;
-        }
-        moveSlide();
+    prevBtn.addEventListener('click', () => {
+      currentIndex--;
+      updateCarousel();
     });
 
-    prevBtn?.addEventListener("click", () => {
-        if (index <= 0) {
-            index = caps.length - 1; // Ir al final
-        } else {
-            index--;
-        }
-        moveSlide();
+    nextBtn.addEventListener('click', () => {
+      currentIndex++;
+      updateCarousel();
     });
 
-    // Actualizar el tamaño del carrusel al cambiar de tamaño la ventana
-    window.addEventListener("resize", updateCapWidth);
-});
+    // Al finalizar la transición, comprobamos si estamos en un clon y reubicamos sin animación
+    viewport.addEventListener('transitionend', () => {
+      if (slides[currentIndex].id === 'first-clone') {
+        viewport.style.transition = 'none';
+        currentIndex = 1;
+        updateCarousel();
+        setTimeout(() => {
+          viewport.style.transition = 'transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55)';
+        }, 0);  // Retardo reducido a 0ms para un cambio inmediato
+      }
+      if (slides[currentIndex].id === 'last-clone') {
+        viewport.style.transition = 'none';
+        currentIndex = slides.length - 2;
+        updateCarousel();
+        setTimeout(() => {
+          viewport.style.transition = 'transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55)';
+        }, 0);
+      }
+    });
 
-window.addEventListener("scroll", function () {
-    let menu = document.querySelector(".menu");
-
-    if (window.scrollY > 50) { 
-        menu.classList.add("menu-active"); // Agrega la clase cuando baja
-    } else {
-        menu.classList.remove("menu-active"); // La quita cuando sube
-    }
-});
-
-
+    // Inicializamos el carrusel
+    updateCarousel();
