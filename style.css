@@ -1,11 +1,29 @@
 html {
     scroll-behavior: smooth;
   }
-* {
+/* Variables para mantener la coherencia en colores y tipografía */
+:root {
+    --primary-color: #003797;
+    --secondary-color: #30d805;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --white: #fff;
+    --font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Reset básico */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+  }
+  
+  body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+  }
 /* Estilo del menú */
 .menu {
     position: fixed;
@@ -39,7 +57,7 @@ html {
 
 /* ✅ Cambiar color del texto cuando el fondo es blanco */
 .menu.menu-active a {
-    color: black;
+    color: rgb(17, 15, 15);
 }
 
 /* ✅ Subrayado animado */
@@ -98,7 +116,7 @@ html {
     position: relative;
     height: 100vh;
     width: 100%;
-    background-color: #000;
+    background-color: #ffffff;
     
 }
 
@@ -188,332 +206,555 @@ html {
 }
 
 
-/* ********************************** Estilos de prodcutos *********************************************** */
-/* Resto de tu código */
+/* ********************************** Estilos de productos *********************************************** */
 
-/* Estilo de la sección */
-.section {
+  /* Variables para facilitar ajustes */
+  :root {
+    --transition-speed: 0.5s;
+    --overlay-bg: rgba(0, 0, 0, 0.4);
+    --overlay-bg-hover: rgba(0, 0, 0, 0.7);
+    --text-color: #fff;
+    --button-bg: #1a73e8;
+    --button-color: #fff;
+    --button-hover-bg: #1558b0;
+  }
+  
+  /* Animación de entrada */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Secciones tipo hero comunes */
+  .hero-section {
     position: relative;
-    height: 400px;  /* La altura de la sección, puedes ajustarlo según lo necesites */
-    margin: 1rem 0;
     overflow: hidden;
-    scroll-margin-top: 100px; /* Ajusta este valor según la altura de tu menú */
-    padding-top: 50px; /* Ajusta según tu diseño */
-}
-
-.section-content {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center; /* Centra el contenido dentro de la sección */
+    animation: fadeIn 1s ease forwards;
+    margin-bottom: 2rem;
+  }
+  
+  /* "miNotaría" ocupa todo el width */
+  .full-width {
+    width: 100%;
+    height: 500px; /* Ajustable */
+  }
+  
+  /* Secciones de los otros productos */
+  .half-width {
+    width: 100%;
+    height: 400px; /* Ajustable */
+  }
+  
+  /* Contenedor grid full width */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  /* Contenido de cada sección */
+  .hero-content {
     position: relative;
-    height: 100%; /* Ocupa toda la altura de la sección */
-    width: 100%;  /* Ocupa todo el ancho */
-}
-
-.section-content img {
     width: 100%;
     height: 100%;
-    object-fit: cover;  /* Mantiene la imagen cubriendo toda el área sin distorsionarse */
-    z-index: 0;
-    border-radius: 20px;
-}
-
-.text-overlay {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .hero-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed) ease;
+  }
+  
+  /* Overlay para cada sección */
+  .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Asegura que el cuadro de texto ocupe todo el contenedor */
-    z-index: 1;
-    color: white;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.6);  /* Fondo oscuro con algo de transparencia */
-    padding: 1rem;
-    border-radius: 10px;
+    height: 100%;
+    background: var(--overlay-bg);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: all 0.5s ease;
-}
-
-/* Estilo para el nombre "miNotaría" */
-.mi-notaria-text {
-    font-size: 5rem;
-    transition: opacity 0.3s ease;
-    z-index: 2;
+    color: var(--text-color);
+    transition: background var(--transition-speed) ease;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Título principal */
+  .hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    transition: opacity var(--transition-speed) ease;
+  }
+  
+  /* Texto informativo */
+  .hero-info {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    max-width: 80%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+  }
+  
+  /* Botón de llamada a la acción */
+  .cta-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: var(--button-bg);
+    border: none;
+    border-radius: 5px;
+    color: var(--button-color);
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease, background 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background: var(--button-hover-bg);
+  }
+  
+  /* Efectos al pasar el cursor */
+  .hero-content:hover img {
+    transform: scale(1.05);
+  }
+  
+  .hero-content:hover .hero-overlay {
+    background: var(--overlay-bg-hover);
+  }
+  
+  .hero-content:hover .hero-title {
+    opacity: 0;
+  }
+  
+  .hero-content:hover .hero-info,
+  .hero-content:hover .cta-button {
     opacity: 1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Estilo para el texto de información */
-.info-text {
-    font-size: 1.5rem;
-    color: white;
-    opacity: 0;  /* Inicia oculto */
-    transition: opacity 0.3s ease;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    text-align: center;
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.7);  /* Fondo oscuro con opacidad */
-    border-radius: 10px;  /* Bordes redondeados */
-}
-
-/* Cuando pasas el cursor sobre el contenedor */
-.section-content:hover .mi-notaria-text {
-    opacity: 0;  /* Oculta el nombre "miNotaría" */
-}
-
-.section-content:hover .info-text {
-    opacity: 1;  /* Muestra el texto de información */
-    font-size: 1.5rem;
-    width: 90%;
-    text-align: center;
-    transition: opacity 0.5s ease;
-}
-
-
+    transform: translateY(0);
+  }
+  
+  /* Responsividad para dispositivos móviles */
+  @media (max-width: 768px) {
+    .full-width {
+      height: 350px;
+    }
+    .half-width {
+      height: 300px;
+    }
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    .hero-info {
+      font-size: 1.2rem;
+    }
+    .cta-button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+    .grid-container {
+      grid-template-columns: 1fr; /* En móviles se muestra una sola columna */
+    }
+  }
+  
 
 /* *************************** section de capacitaciones ******************************************** */
-
-.capacitaciones {
+/* Título superpuesto en el centro del carrusel */
+.carousel-title {
+    left: 50%;
     text-align: center;
-    padding: 40px 0;
-    background-color: #f8f9fa;
-    position: relative;
-}
-.carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    width: 80%;
-    margin: 0 auto;
-}
-.carousel {
-    width: 100%;
-    overflow: hidden;
-}
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    will-change: transform;
-}
-.cap {
-    min-width: 300px;
-    height: 200px;
-    position: relative;
-    margin: 10px;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-.cap:hover {
-    transform: scale(1.1);
-}
-.cap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.cap-text {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    font-size: 18px;
-    text-align: center;
-}
-.carousel-btn {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
-    transition: background 0.3s;
-}
-.carousel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.titulo{
-    height: 2cm;
-    font-size: 30px;
-    
-}
-
-
-/* ************************************** section noticias ********************************** */
-
-.capacitaciones, .noticias {
-    text-align: center;
-    padding: 40px 0;
-    background-color: #f8f9fa;
-    position: relative;
-}
-.carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    width: 80%;
-    margin: 0 auto;
-}
-.carousel {
-    width: 100%;
-    overflow: hidden;
-}
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    will-change: transform;
-}
-.cap {
-    min-width: 300px;
-    height: 200px;
-    position: relative;
-    margin: 10px;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-.cap:hover {
-    transform: scale(1.1);
-}
-.cap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.cap-text {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    font-size: 18px;
-    text-align: center;
-}
-.noticias-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.noticia {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-.noticia img {
-    width: 100%;
-    height: 4cm;
-    border-radius: 8px;
-}
-.noticia h3 {
-    margin: 10px 0;
-}
-.noticia p {
-    flex-grow: 1;
-}
-
-.ver-mas {
-    background: #003797;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-    align-self: center;
-    margin-top: 15px;
-}
-
-.ver-mas:hover {
-    background: #003797;
-}
-
-.btn-noticias {
-    margin-top: 20px;
-    background: #30d805;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-.btn-noticias:hover {
-    background: #218838;
-}
-
-
-
-/* ***************************** section de texto  **********************************/
-
-.informacion_minotaria {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
-.section-title {
-    color: 003797;
     font-size: 2rem;
-    margin-bottom: 20px;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+/* Contenedor del carrusel a pantalla completa con fondo degradado sutil */
+.carousel-container {
+    width: 100%;
+    position: relative;
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    padding: 20px 0;
+    box-sizing: border-box;
+    perspective: 1200px;
 }
 
+/* Carrusel a pantalla completa con bordes muy redondeados */
+/* .carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0,55,151,0.2);
+    margin: 0 auto;
+} */
+
+/* Viewport del carrusel */
+.carousel-viewport {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Cada slide ocupa 1/3 y tiene transiciones para efecto 3D */
+.slide {
+    flex: 0 0 calc(100% / 3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    transition: transform 0.8s ease, filter 0.8s ease, opacity 0.8s ease;
+}
+
+/* Imagen de la slide con bordes más redondeados */
+.slide img {
+    width: 90%;
+    height: 250px;
+    border-radius: 20px;
+    transition: transform 0.9s ease;
+}
+
+/* Texto superpuesto con fondo semitransparente y bordes redondeados */
+.slide div {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 20px;
+    z-index: 1;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Slide activo: se escala y se resalta con sombra y efecto glow */
+.slide.active {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.1) rotateY(0deg);
+    z-index: 2;
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+}
+
+/* Imagen del slide activo con sutil traslación en Z */
+.slide.active img {
+    transform: scale(1.1) translateZ(30px);
+}
+
+/* Glow animado en el slide activo */
+.slide.active::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    animation: glow 2s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255,255,255,1);
+    }
+}
+
+/* Slides laterales: se reducen, se desenfocan y se giran ligeramente */
+.slide:not(.active) {
+    filter: blur(2px);
+    opacity: 0.7;
+    transform: scale(0.95) rotateY(10deg);
+}
+
+/* Flechas de navegación con estilo moderno y redondeado */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 3;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.arrow:hover {
+    background: rgba(0,0,0,0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.arrow.left {
+    left: 20px;
+}
+
+.arrow.right {
+    right: 20px;
+}
+
+  
+
+/* ================= Noticias ================= */
+.noticias {
+    padding: 2rem;
+    background: var(--white);
+  }
+  
+  .titulo {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .noticias-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .noticia {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+  
+  .noticia:hover {
+    transform: translateY(-5px);
+  }
+  
+  .noticia img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .noticia h3 {
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    color: var(--primary-color);
+  }
+  
+  .noticia p {
+    flex-grow: 1;
+    padding: 0 1rem 1rem;
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+  
+  .ver-mas {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.2rem;
+    margin: 1rem auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: block;
+  }
+  
+  .ver-mas:hover {
+    background: #002b6b; /* Un tono más oscuro */
+  }
+  
+  .btn-noticias {
+    display: block;
+    margin: 2rem auto;
+    background: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn-noticias:hover {
+    background: #28b005; /* Tono levemente más oscuro */
+  }
+  
+  /* ================= Sección de Información ================= */
+  /* Fondo de la sección con degradado sutil y ambiente moderno */
+.informacion_minotaria {
+    padding: 2rem;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+}
+
+/* Títulos con animación de entrada y tipografía moderna */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 2rem 0 1rem;
+    color: var(--primary-color, #003797);
+    position: relative;
+    animation: fadeInTitle 1s ease forwards;
+}
+
+@keyframes fadeInTitle {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Contenido: disposición flexible con animación de aparición */
 .content {
     display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
     align-items: center;
-    justify-content: space-between;
-    width: 80%;
-    margin-bottom: 40px;
+    justify-content: center;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: slideIn 1s ease forwards;
+}
+
+/* Cada bloque de contenido alterna el delay para dar dinamismo */
+.content:nth-of-type(odd) {
+    animation-delay: 0.3s;
+}
+.content:nth-of-type(even) {
+    animation-delay: 0.6s;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(50px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo para el texto con fondo tipo card, sombras y transición al hover */
+/* Fondo de la sección con degradado moderno */
+.informacion_minotaria {
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Títulos con subrayado animado */
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    position: relative;
+    margin-bottom: 1.5rem;
+    color: #002244;
+    opacity: 0;
+    animation: fadeInTitle 1s forwards;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background: linear-gradient(90deg, #003797, #30d805);
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+@keyframes fadeInTitle {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Cards de contenido con efecto glassmorphism y animación de entrada */
+.content {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 0.8s forwards;
+}
+
+/* Alterna delay entre cards para dinamismo */
+.informacion_minotaria .content:nth-of-type(1) { animation-delay: 0.3s; }
+.informacion_minotaria .content:nth-of-type(2) { animation-delay: 0.5s; }
+.informacion_minotaria .content:nth-of-type(3) { animation-delay: 0.7s; }
+.informacion_minotaria .content:nth-of-type(4) { animation-delay: 0.9s; }
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo para el texto con transición sutil en hover */
+.text {
+    flex: 1 1 300px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    padding: 1rem;
     transition: transform 0.3s ease;
 }
 
-.content:hover {
-    transform: translateY(-10px); /* Efecto hover */
+.text:hover {
+    transform: scale(1.02);
 }
 
-.text {
-    flex: 1;
-    font-size: 1.1rem;
-    margin-right: 20px;
-    line-height: 1.6;
-}
-
+/* Estilo para la imagen con bordes redondeados, efecto de escala y overlay */
 .image {
-    width: 200px;
-    height: 200px;
-    background-image: url('cert.png');
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
+    flex: 0 0 300px;
+    height: 250px;
+    background: url('cert.png') no-repeat center/cover;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.image::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image:hover {
+    transform: scale(1.05);
+}
+
+.image:hover::before {
+    opacity: 1;
 }
 
 
