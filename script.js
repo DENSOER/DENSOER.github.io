@@ -1,37 +1,44 @@
-// *************************** ANIMACIONES AL HACER SCROLL ***************************
+// Animación al hacer scroll
 window.addEventListener('scroll', function () {
-    const scrollPosition = window.scrollY;
-    const imagenPrincipal = document.querySelector('.imagen-principal');
-    const menu = document.querySelector('.menu');
-    const menuItem = document.querySelector('.menu-item');
-    const contenidoCentral = document.querySelector('.contenido-central');
-    const body = document.body;
-    const contenedorImagen = document.querySelector('.contenedor-imagen-principal');
+  const scrollPosition = window.scrollY;
+  const imagenPrincipal = document.querySelector('.imagen-principal');
+  const menu = document.querySelector('.menu');
+  const contenidoCentral = document.querySelector('.contenido-central');
+  const contenedorImagen = document.querySelector('.contenedor-imagen-principal');
 
-    // Ajustar el umbral según el tamaño de pantalla
-    const scrollThreshold = window.innerWidth < 768 ? 50 : 100;
-    
-    if (scrollPosition > scrollThreshold) {
-        imagenPrincipal?.classList.add('scrolled');
-        menu?.classList.add('menu-active');
-        if (menuItem) menuItem.style.display = 'block';
-        if (contenidoCentral) contenidoCentral.style.opacity = 0;
-        body?.classList.add('scroll-active');
-    } else {
-        imagenPrincipal?.classList.remove('scrolled');
-        menu?.classList.remove('menu-active');
-        if (menuItem) menuItem.style.display = 'none';
-        if (contenidoCentral) contenidoCentral.style.opacity = 1;
-        body?.classList.remove('scroll-active');
-    }
+  // Umbral según ancho de pantalla
+  const scrollThreshold = window.innerWidth < 768 ? 50 : 100;
 
-    // Aplicamos la animación a la imagen contenedora
-    if (scrollPosition > window.innerHeight) {
-        contenedorImagen?.classList.add('scrolled');
-    } else {
-        contenedorImagen?.classList.remove('scrolled');
+  if (scrollPosition > scrollThreshold) {
+    imagenPrincipal.classList.add('scrolled');
+    menu.classList.add('menu-active'); // Activa el logo en la izquierda y cambia el layout
+    if (contenidoCentral && !contenidoCentral.classList.contains('hide')) {
+      contenidoCentral.classList.add('hide');
     }
+  } else {
+    imagenPrincipal.classList.remove('scrolled');
+    menu.classList.remove('menu-active');
+    if (contenidoCentral && contenidoCentral.classList.contains('hide')) {
+      contenidoCentral.classList.remove('hide');
+    }
+  }
+
+  // Animación para el contenedor de la imagen principal
+  if (scrollPosition > window.innerHeight) {
+    contenedorImagen.classList.add('scrolled');
+  } else {
+    contenedorImagen.classList.remove('scrolled');
+  }
 });
+
+// Toggle para el menú responsive
+const menuToggle = document.getElementById('menu-toggle');
+const menuItems = document.querySelector('.menu-items');
+menuToggle.addEventListener('click', function () {
+  menuItems.classList.toggle('active');
+  menuToggle.classList.toggle('open');
+});
+
 
 // ************************** CARRUSEL RESPONSIVE ***************************
 const viewport = document.querySelector('.carousel-viewport');
