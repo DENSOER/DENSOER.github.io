@@ -1,210 +1,243 @@
 html {
-    scroll-behavior: smooth;
-  }
-/* Variables para mantener la coherencia en colores y tipografía */
+  scroll-behavior: smooth;
+}
+
+/* Variables */
 :root {
-    --primary-color: #003797;
-    --secondary-color: #30d805;
-    --text-color: #333;
-    --background-color: #f4f4f4;
-    --white: #fff;
-    --font-family: 'Montserrat', sans-serif;
-  }
-  
-  /* Reset básico */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: var(--font-family);
-    color: var(--text-color);
-    background-color: var(--background-color);
-    line-height: 1.6;
-  }
-/* Estilo del menú */
+  --primary-color: #003797;
+  --secondary-color: #30d805;
+  --text-color: #333;
+  --background-color: #f4f4f4;
+  --white: #fff;
+  --font-family: 'Montserrat', sans-serif;
+  --menu-height: 80px;
+  --transition-duration: 0.4s;
+  --menu-bg-active: #fff;
+}
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+/* MENÚ DESKTOP */
 .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--menu-height);
+  background-color: transparent;
+  color: white;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  transition: background-color var(--transition-duration) ease,
+              padding var(--transition-duration) ease,
+              box-shadow var(--transition-duration) ease;
+}
+
+/* Cuando se hace scroll, el menú cambia a fondo blanco, añade sombra y ajusta el layout */
+.menu.menu-active {
+  background-color: var(--menu-bg-active);
+  color: black;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0 30px;
+}
+
+/* Logo: inicialmente oculto */
+.menu-logo {
+  display: none;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity var(--transition-duration) ease, transform var(--transition-duration) ease;
+}
+
+/* Mostrar y animar el logo al hacer scroll */
+.menu.menu-active .menu-logo {
+  display: flex;
+  opacity: 1;
+  /* Si prefieres que el logo no esté centrado verticalmente, puedes ajustar top o quitar el translate */
+  top: 10px; /* Ejemplo: 10px desde arriba */
+  transform: none;
+}
+
+/* Imagen del logo ajustada */
+.menu-logo img {
+  width: 150px;
+  height: auto;
+  transition: width var(--transition-duration) ease;
+}
+
+/* Contenedor derecho: centra el contenido del menú */
+.menu-right {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+/* Ítems del menú */
+.menu-items {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  transition: all var(--transition-duration) ease;
+}
+
+.menu-items li {
+  margin: 0 15px;
+  font-size: 17px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Enlaces del menú con animación de hover */
+.menu a {
+  text-decoration: none;
+  color: inherit;
+  padding: 10px;
+  transition: color var(--transition-duration) ease, transform var(--transition-duration) ease;
+}
+
+/* Efecto subrayado animado */
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  background: var(--primary-color);
+  transition: width var(--transition-duration) ease, left var(--transition-duration) ease;
+}
+.menu a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Suave elevación al hacer hover en enlaces */
+.menu a:hover {
+  transform: translateY(-3px);
+}
+
+/* BOTÓN HAMBURGUESA (oculto en desktop) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: transform var(--transition-duration) ease;
+}
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  background: var(--white);
+  transition: transform var(--transition-duration) ease, opacity var(--transition-duration) ease;
+}
+/* Transformación a "X" al abrir el menú responsive */
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* IMAGEN PRINCIPAL y CONTENEDOR */
+.contenedor-imagen-principal {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+}
+.imagen-principal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contenido-central {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+.contenido-central.hide {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}
+
+/* Animación de scroll en la imagen principal */
+.imagen-principal.scrolled,
+.contenedor-imagen-principal.scrolled {
+  transform: translateY(-100vh);
+  transition: transform 1s ease-in-out;
+}
+
+/* MENÚ RESPONSIVE */
+@media (max-width: 768px) {
+  .menu {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .menu-items {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background-color: transparent;
-    color: white;
-    padding: 20px 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease;
-}
-
-/* ✅ Color del texto del menú en estado inicial */
-.menu a {
-    position: relative;
-    padding: 10px;
-    text-decoration: none;
-    color: white; /* Blanco al inicio */
-    transition: color 0.3s ease-in-out;
-}
-
-/* ✅ Cambiar color cuando el usuario hace scroll */
-.menu.menu-active {
-    background-color: white; /* Cambia el fondo a blanco */
-}
-
-/* ✅ Cambiar color del texto cuando el fondo es blanco */
-.menu.menu-active a {
-    color: rgb(17, 15, 15);
-}
-
-/* ✅ Subrayado animado */
-.menu a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 100%;
-    height: 3px;
-    background: #003797;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease-in-out;
-}
-
-.menu a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-
-
-/* Imagen 3, inicialmente oculta */
-.menu-item {
-    position: absolute;
-    transition: all 1s ease;
-    width: 60px; /* Ajustar el tamaño de la imagen */
-    height: 60px; /* Ajustar el tamaño de la imagen */
-    display: none; /* Se oculta inicialmente */
-}
-
-.menu img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.menu ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-    width: 60%;
-    margin: 0;
-}
-
-.menu ul li {
-    color: white;
-    font-size: 17px;
-    cursor: pointer;
-}
-
-/* Imagen principal ocupa toda la pantalla */
-.contenedor-imagen-principal {
-    position: relative;
+    right: -100%;
+    width: 80%;
     height: 100vh;
-    width: 100%;
-    background-color: #ffffff;
-    
+    background: var(--primary-color);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.5s ease;
+    z-index: 1100;
+  }
+  
+  .menu-items.active {
+    right: 0;
+  }
+  
+  .menu-items li {
+    margin: 20px 0;
+  }
+  
+  .menu a {
+    color: var(--white);
+    font-size: 20px;
+  }
 }
 
-.imagen-principal img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Contenido centrado sobre la imagen principal */
-.contenido-central {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    z-index: 1;
-    opacity: 1; /* Asegúrate de que no esté oculto */
-    transition: opacity 1s ease-out, transform 1s ease-out; /* Añadir animación de transformación */
-}
-
-.scroll-active .contenido-central {
-    opacity: 0;
-    transform: translate(-50%, -100%); /* Hacer que el texto se mueva hacia arriba */
-}
-
-
-.imagen-secundaria {
-    max-width: 70%; /* Ajusta el tamaño de la imagen 2 */
-    height: auto;
-    transition: transform 1s ease-in-out; /* Agrega animación para movimiento de la imagen */
-}
-
-.scroll-active .imagen-secundaria {
-    transform: scale(0.8); /* Disminuir el tamaño de la imagen al hacer scroll */
-}
-
-.contenido-central p {
-    font-size: 45px;
-    font-style: italic;
-    margin-top: 10px;
-}
-
-/* Cuerpo de la página */
-.productos {
-    background-color: white;
-    padding: 50px 20px;
-    height: 1500px; /* Para mostrar contenido largo */
-}
-
-/* Estilos cuando se activa la animación de scroll */
-.imagen-principal.scrolled {
-    transform: translateY(-100vh);
-    transition: transform 1s ease-in-out;
-}
-
-.menu-active {
-    background-color: white;
-}
-
-.menu-active ul li {
-    color: #333 !important;  /* Color de texto cuando el fondo es blanco */
-}
-
-/* Cuando se hace scroll, imagen 3 pasa a la izquierda */
-.menu-active .menu-item {
-    position: fixed;
-    top: 20px;
-    left: 20px; /* Mueve la imagen al lado izquierdo */
-    transform: translateX(0); /* Mantenla alineada a la izquierda */
-    width: 200px;
-    height: 50px;
-    display: block; /* La imagen 3 se hace visible */
-    transition: all 1s ease;
-}
-
-/* Cuando el contenido hace scroll, cambia el fondo a blanco */
-.scroll-active {
-    background-color: white;
-}
-
-/* Hacer que el texto desaparezca */
-.contenido-central {
-    opacity: 0;
-    transition: opacity 1s ease-out;
-}
-
+/* responsive  */
 
 /* ********************************** Estilos de productos *********************************************** */
 
