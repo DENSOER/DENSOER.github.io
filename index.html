@@ -8,39 +8,45 @@
 </head>
 <body>
 
-    <!-- Menú -->
-    <nav class="menu">
-        
-        <div class="menu-item">
-            <img id="menu-img" src="racoo_minotaria-black.png" alt="Imagen de menú">
-        </div>
-       
-        <ul>
-            <li> <a href="#minotaria">miNotaría</a></li>
-            <li> <a href="#uif">UIF</a></li>
-            <li><a href="#calculo">Cálculo Fácil</a></li>
-            <li><a href="#cfdi">CFDI</a></li>
-            <li><a href="#listas">Listas PB</a></li>
-            <li><a href="#certificaciones">Certificaciones</a></li>
-            <li><a href="#noticias">Noticias</a></li>
-            <li><a href="#contactos">Contactos</a></li>
-        </ul>
-    </nav>
+ <!-- Menú -->
+<nav class="menu">
+  <!-- Logo: se mostrará solo al hacer scroll -->
+  <div class="menu-logo">
+    <img id="menu-img" src="racoo_minotaria-black.png" alt="Logo de menú">
+  </div>
+  <div class="menu-right">
+    <!-- Botón hamburguesa para móviles -->
+    <button id="menu-toggle" class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="menu-items">
+      <li><a href="#minotaria">miNotaría</a></li>
+      <li><a href="#uif">UIF</a></li>
+      <li><a href="#calculo">Cálculo Fácil</a></li>
+      <li><a href="#cfdi">CFDI</a></li>
+      <li><a href="#listas">Listas PB</a></li>
+      <li><a href="#certificaciones">Certificaciones</a></li>
+      <li><a href="#noticias">Noticias</a></li>
+      <li><a href="#contactos">Contactos</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <!-- Contenedor de la imagen principal y el texto -->
-    <div class="contenedor-imagen-principal">
-        <div class="imagen-principal">
-            <img src="unsplash_sobres_corta-scaled.jpg" alt="Imagen principal">
-        </div>
-        <div class="contenido-central">
-            <div style="height: 1.5cm;"></div>
-            <img src="racoo_minotaria-white.png" alt="Imagen secundaria" class="imagen-secundaria">
-            <p>Hecho por notarios para notarios</p>
-            <br><br><br><br><br><br><br>
-            <p style="font-size: 35px;">sistema integral y/o módular</p>
-        </div>
-    </div>
-
+<!-- Contenedor de la imagen principal y el texto -->
+<div class="contenedor-imagen-principal">
+  <div class="imagen-principal">
+    <img src="unsplash_sobres_corta-scaled.jpg" alt="Imagen principal">
+  </div>
+  <div class="contenido-central">
+    <div style="height: 1.5cm;"></div>
+    <img src="racoo_minotaria-white.png" alt="Imagen secundaria" class="imagen-secundaria">
+    <p>Hecho por notarios para notarios</p>
+    <br><br><br><br>
+    <p style="font-size: 35px;">sistema integral y/o módular</p>
+  </div>
+</div>
 
 
     <!-- Cuerpo de la página (productos, etc.) -->
@@ -62,68 +68,62 @@
             </div>
           </div>
         </section>
-      
-        <!-- Contenedor en grid para las otras secciones -->
-        <div class="grid-container">
-          <!-- Sección UIF -->
-          <section class="hero-section half-width" id="uif">
-            <div class="hero-content">
-              <img src="5.avif" alt="Producto UIF">
-              <div class="hero-overlay">
-                <div class="hero-title">UIF</div>
-                <div class="hero-info">
-                  El mejor sistema para llevar la administración de todos los procesos de su notaría.
-                </div>
-                <button class="cta-button">Más información</button>
+
+        <section class="hero-section full-width" id="minotaria">
+          <div class="hero-content">
+            <img src="5.avif" alt="Producto miNotaría">
+            <div class="hero-overlay">
+              <div class="hero-title">UIF</div>
+              <div class="hero-info">
+                El mejor sistema para llevar la administración de todos los procesos de su notaría.
               </div>
+              <button class="cta-button">Más información</button>
             </div>
-          </section>
-      
-          <!-- Sección CFDI -->
-          <section class="hero-section half-width" id="cfdi">
-            <div class="hero-content">
-              <img src="5.avif" alt="Producto CFDI">
-              <div class="hero-overlay">
-                <div class="hero-title">CFDI</div>
-                <div class="hero-info">
-                  El primer sistema para CFDI diseñado para tablets, smartphones y computadoras.
-                </div>
-                <button class="cta-button">Más información</button>
+          </div>
+        </section>
+
+        <section class="hero-section full-width" id="minotaria">
+          <div class="hero-content">
+            <img src="5.avif" alt="Producto miNotaría">
+            <div class="hero-overlay">
+              <div class="hero-title">Cálculo Fácil</div>
+              <div class="hero-info">
+                El mejor sistema para calcular impuestos notariales, exportar al declaranot, llenado de formatos del 5%, consulta de tablas, tarifas y mucho más.
               </div>
+              <button class="cta-button">Más información</button>
             </div>
-          </section>
-      
-          <!-- Sección Listas PB -->
-          <section class="hero-section half-width" id="listas">
-            <div class="hero-content">
-              <img src="5.avif" alt="Producto Listas PB">
-              <div class="hero-overlay">
-                <div class="hero-title">Listas PB</div>
-                <div class="hero-info">
-                  La forma más sencilla de imprimir tu acuse de las búsquedas realizadas en las listas UIF.
-                </div>
-                <button class="cta-button">Más información</button>
+          </div>
+        </section>
+
+        <section class="hero-section full-width" id="minotaria">
+          <div class="hero-content">
+            <img src="5.avif" alt="Producto miNotaría">
+            <div class="hero-overlay">
+              <div class="hero-title">CFDI</div>
+              <div class="hero-info">
+                El primer sistema para CFDI diseñado para tablets, smartphones y computadoras.
               </div>
+              <button class="cta-button">Más información</button>
             </div>
-          </section>
-      
-          <!-- Sección Cálculo Fácil -->
-          <section class="hero-section half-width" id="calculo">
-            <div class="hero-content">
-              <img src="5.avif" alt="Producto Cálculo Fácil">
-              <div class="hero-overlay">
-                <div class="hero-title">Cálculo Fácil</div>
-                <div class="hero-info">
-                  El mejor sistema para calcular impuestos notariales, exportar al declaranot, llenado de formatos del 5%, consulta de tablas, tarifas y mucho más.
-                </div>
-                <button class="cta-button">Más información</button>
+          </div>
+        </section>
+
+        <section class="hero-section full-width" id="minotaria">
+          <div class="hero-content">
+            <img src="5.avif" alt="Producto miNotaría">
+            <div class="hero-overlay">
+              <div class="hero-title">Listas PB</div>
+              <div class="hero-info">
+                El mejor sistema para llevar la administración de todos los procesos de su notaría.
               </div>
+              <button class="cta-button">Más información</button>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
+
       </section>
       
-        <div style="height: 2cm;"></div>      
+        <div style="height: 0.5cm;"></div>      
 
     
     <!-- Sección de Capacitaciones (Carrusel) -->
