@@ -1,3 +1,4 @@
+// 1) Burger (igual que antes)
 const burger = document.querySelector('.header__burger');
 const mobileNav = document.querySelector('.mobile-nav');
 burger.addEventListener('click', () => {
@@ -5,14 +6,11 @@ burger.addEventListener('click', () => {
   burger.classList.toggle('open');
 });
 
-
-// Dropdown en móvil
-const dropdownToggle = document.querySelector('.has-dropdown > a');
-const dropdownMenu   = document.querySelector('.has-dropdown .dropdown');
-
-dropdownToggle.addEventListener('click', e => {
-  if (window.innerWidth <= 768) {
-    e.preventDefault();
-    document.querySelector('.has-dropdown').classList.toggle('open');
-  }
+// 2) Dropdown por clic en TODOS los dispositivos
+document.querySelectorAll('.has-dropdown > a').forEach(toggle => {
+  toggle.addEventListener('click', e => {
+    e.preventDefault();                       // siempre evitamos el href
+    const parentLi = toggle.parentElement;    // el <li class="has-dropdown">
+    parentLi.classList.toggle('open');        // muestra/oculta el menú
+  });
 });
