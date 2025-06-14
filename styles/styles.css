@@ -112,7 +112,6 @@ main { width:100%; }
   animation: fadeInUp 0.3s ease-out;
 }
 
-.has-dropdown:hover .dropdown,
 .has-dropdown.open .dropdown {
   display: block;
 }
@@ -134,15 +133,25 @@ main { width:100%; }
   color: #0042cc;
 }
 
-/* Opcional: clic para móvil */
-@media (max-width: 768px) {
-  .has-dropdown > a {
-    position: relative;
+/* —— Dropdown dentro de mobile-nav —— */
+@media(max-width: 768px) {
+  /* Aseguramos que el .dropdown no esté posicionado fuera */
+  .mobile-nav .has-dropdown .dropdown {
+    display: none;         /* oculto por defecto */
+    position: static;      /* flow normal dentro del menú */
+    margin: 0.5rem 0 0 1rem;/* un pequeño indent */
+    padding: 0;
+    border: none;
+    box-shadow: none;
   }
-  .has-dropdown > a::after {
-    content: '▾';
-    margin-left: 0.25rem;
+
+  /* Cuando tenga la clase .open, lo mostramos */
+  .mobile-nav .has-dropdown.open .dropdown {
+    display: block;
   }
-  /* evitamos hover en móvil y usamos clase .open */
-  .has-dropdown:hover .dropdown { display: none; }
+
+  /* Eliminamos cualquier hover que lo haya escondido */
+  .mobile-nav .has-dropdown:hover .dropdown {
+    display: none;
+  }
 }
