@@ -1,0 +1,148 @@
+/* Reset básico */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background:#f1f1f1;
+  color:#222;
+}
+a { text-decoration:none; }
+
+/* Animaciones */
+@keyframes fadeInUp { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:translateY(0);} }
+@keyframes pulse { 0%,100% { transform:scale(1);} 50% { transform:scale(1.05);} }
+@keyframes rotateIn { from { transform:rotate(-20deg); opacity:0;} to { transform:rotate(0); opacity:1;} }
+
+/* ===== HEADER ===== */
+.header { position:sticky; top:0; z-index:100; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+.header__inner {
+  display:flex; align-items:center; justify-content:center;
+  gap:4rem; padding:1rem 2rem;
+}
+.header__logo img {
+  width:250px; height:75.33px; object-fit:contain;
+  animation:rotateIn .8s ease-out;
+}
+.header__nav ul { display:flex; gap:2rem; list-style:none; }
+.header__nav li { animation:fadeInUp .6s ease-out both; }
+.header__nav li:nth-child(1) { animation-delay:.2s; }
+.header__nav li:nth-child(2) { animation-delay:.3s; }
+.header__nav li:nth-child(3) { animation-delay:.4s; }
+.header__nav li:nth-child(4) { animation-delay:.5s; }
+.header__nav a {
+  font-weight:500; font-size:1rem; color:#333;
+  transition:color .3s;
+}
+.header__nav a:hover { color:#0042cc; animation:pulse 1s infinite; }
+
+/* Burger móvil */
+.header__burger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; }
+.header__burger span { width:25px; height:3px; background:#333; display:block; }
+.mobile-nav { display:none; background:#fff; }
+.mobile-nav ul { list-style:none; padding:1rem; }
+.mobile-nav li { margin-bottom:.5rem; }
+.mobile-nav a { color:#333; font-size:1rem; }
+
+/* ===== SECTIONS ===== */
+main { width:100%; }
+.product-section {
+  width:100%; background:#fff;
+  padding:2rem 1rem; text-align:center;
+  animation:fadeInUp .8s ease-out both;
+  border-top:2px solid #eee;
+}
+.product-section:nth-child(even) { animation-delay:.4s; }
+.section__title { font-size:2.5rem; font-weight:700; margin-bottom:.5rem; }
+.section__subtitle { font-size:1.1rem; color:#555; margin-bottom:1.5rem; }
+.section__buttons { display:flex; justify-content:center; gap:1rem; margin-bottom:2rem; }
+.btn {
+  padding:0.75rem 1.75rem; font-size:0.95rem; font-weight:600;
+  border-radius:999px; transition:transform .3s;
+}
+.btn--primary { background:#0042cc; color:#fff; border:none; }
+.btn--outline { border:2px solid #0042cc; color:#0042cc; background:transparent; }
+.btn:hover { transform:translateY(-3px); }
+.btn--primary:hover { background:#0033aa; }
+.btn--outline:hover { background:#0042cc; color:#fff; }
+.section__image img {
+  width:600px; height:623px; object-fit:cover;
+  max-width:100%; box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  animation:fadeInUp 1s ease-out both;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px) {
+  .header__logo img { width:180px; height:auto; }
+  .product-section { padding:2rem 1rem; }
+}
+@media(max-width:768px) {
+  .header__nav { display:none; }
+  .header__burger { display:flex; }
+  .product-section { padding:1.5rem 1rem; }
+}
+@media(max-width:480px) {
+  .header__inner { flex-direction:column; gap:1rem; }
+  .section__title { font-size:2rem; }
+  .section__subtitle { font-size:1rem; }
+}
+
+
+/* ==== Dropdown menú Productos ==== */
+.has-dropdown {
+  position: relative;
+}
+
+.has-dropdown > a {
+  cursor: pointer;
+}
+
+.has-dropdown .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 4px;
+  min-width: 180px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 50;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.has-dropdown:hover .dropdown,
+.has-dropdown.open .dropdown {
+  display: block;
+}
+
+.has-dropdown .dropdown li {
+  padding: 0;
+}
+
+.has-dropdown .dropdown li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  font-size: 0.95rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.has-dropdown .dropdown li a:hover {
+  background: #f0f0f0;
+  color: #0042cc;
+}
+
+/* Opcional: clic para móvil */
+@media (max-width: 768px) {
+  .has-dropdown > a {
+    position: relative;
+  }
+  .has-dropdown > a::after {
+    content: '▾';
+    margin-left: 0.25rem;
+  }
+  /* evitamos hover en móvil y usamos clase .open */
+  .has-dropdown:hover .dropdown { display: none; }
+}
