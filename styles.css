@@ -1,0 +1,594 @@
+/* TIPOGRAFÍA GLOBAL */
+body, html {
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
+    overflow-x: hidden;
+}
+
+.main-title, .section-title, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
+    font-weight: bold;
+}
+
+p, .section-desc, .main-desc {
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
+    font-weight: normal;
+}
+
+/* --- ESTILOS ORIGINALES PARA index.html (globales) --- */
+header {
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1002;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 64px;
+    background: #f8f9fa;
+}
+.logo2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 64px;
+    flex: 0 0 auto;
+}
+.logo2 img {
+    height: 38px;
+    width: auto;
+    margin-right: 8px;
+}
+.nav-links {
+    display: flex;
+    gap: 32px;
+    margin-left: 16px;
+    list-style: none;
+    font-size: 1em;
+    font-weight: 500;
+    align-items: center;
+}
+.nav-links li a {
+    color: #222;
+    text-decoration: none !important;
+    font-size: 1.1em;
+    font-weight: 500;
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
+}
+.nav-links a:hover, .nav-links li:hover a, .nav-links a:focus {
+    color: #003087;
+    text-decoration: none !important;
+}
+.hamburger {
+    display: none;
+}
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        padding: 0 10px;
+        height: 56px;
+    }
+    .logo2 {
+        height: 56px;
+    }
+    .logo2 img {
+        height: 32px;
+    }
+    .nav-links {
+        font-size: 1em;
+        height: 56px;
+    }
+}
+
+/* HERO INDEX AJUSTADO */
+.main-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 80vh;
+    padding-top: 32px;
+    background: transparent;
+}
+.hero-title {
+    font-size: 4em;
+    font-weight: 400;
+    margin: 32px 0 0 0;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.hero-title sup {
+    font-size: 0.4em;
+    vertical-align: super;
+}
+.hero-sub {
+    font-size: 1.7em;
+    margin: 18px 0 32px 0;
+    text-align: center;
+    font-weight: 400;
+}
+.hero-btns {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-btns a {
+    text-decoration: none;
+}
+.main-btn.outline, .main-btn.blue {
+    display: inline-block;
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    padding: 12px 0;
+    font-size: 1.3em;
+    font-weight: 700;
+    border-radius: 24px;
+    text-align: center;
+    line-height: 1.2;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    box-sizing: border-box;
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
+}
+.main-btn.blue,
+.main-btn.outline.blue {
+    background: #003799;
+    color: #fff;
+    border: none;
+}
+.main-btn.blue:hover,
+.main-btn.outline.blue:hover {
+    background: #002266;
+    color: #fff;
+}
+.main-btn.outline {
+    background: #fff;
+    color: #003799;
+    border: 2px solid #003799;
+}
+.main-btn.outline:hover {
+    background: #eaf0fa;
+    color: #003799;
+    border: 2px solid #003799;
+}
+.hero-img {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+    height: 480px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+    
+}
+.hero-img video, .hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+}
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 2.2em;
+    }
+    .hero-sub {
+        font-size: 1.1em;
+    }
+    .hero-img {
+        width: 98vw;
+        height: auto;
+        min-width: 180px;
+    }
+    .main-btn.blue, .main-btn.outline {
+        font-size: 1em;
+        padding: 10px 18px;
+    }
+    .hero-btns {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* Títulos principales */
+.main-title, .section-title {
+    color: #1746a2;
+    font-size: 2.6em;
+    font-weight: bold;
+    text-align: center;
+    margin: 32px 0 16px 0;
+}
+.main-desc, .section-desc {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 32px auto;
+    font-size: 1.2em;
+    color: #444;
+}
+
+/* Sección Funcionalidad - Diagrama */
+.diagram-box {
+    background: #e0e1e6;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 900px;
+    min-height: 320px;
+    aspect-ratio: 16/9;
+    margin: 0 auto 48px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2em;
+    color: #888;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+.diagram-box > div,
+.diagram-box iframe {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100%;
+    min-width: 100%;
+    aspect-ratio: 16/9;
+    display: block;
+    position: static !important;
+}
+@media (max-width: 900px) {
+    .diagram-box {
+        max-width: 98vw;
+        min-height: 180px;
+        aspect-ratio: 16/9;
+    }
+}
+
+/* Características - estilo tipo imagen */
+/* Estilo base para escritorio */
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin: 40px 0 48px 0;
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+.feature-card {
+  max-width: 270px;
+  min-width: 220px;
+  flex: 1 1 220px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Para móvil */
+@media (max-width: 600px) {
+  .features-grid {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-left: 12px;
+    padding-right: 12px;
+    box-sizing: border-box;
+  }
+  .feature-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}
+.feature-card {
+    position: relative;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(93,116,196,0.08);
+    width: 273.68px;
+    height: 244.75px;
+    padding: 32px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    border-bottom: 3px solid #5D74C4;
+    border-right: 3px solid #5D74C4;
+    background: #fff;
+    box-sizing: border-box;
+}
+.feature-card.f2, .feature-card.f4 {
+    border-bottom: 3px solid #519200;
+    border-right: 3px solid #519200;
+    background: #f6faed;
+}
+.feature-num {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #bfc2d1;
+    margin-bottom: 18px;
+    margin-top: 0;
+    margin-left: 2px;
+    letter-spacing: 2px;
+}
+.feature-card h3 {
+    color: #222;
+    font-size: 1.18em;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.feature-card p {
+    color: #444;
+    font-size: 1em;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.3;
+}
+/* Círculo decorativo arriba derecha */
+.feature-card::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: -2.5px 0 0 0 #5D74C4;
+    z-index: 2;
+}
+.feature-card.f2::after, .feature-card.f4::after {
+    box-shadow: -2.5px 0 0 0 #519200;
+    background: #f6faed;
+}
+@media (max-width: 1100px) {
+    .features-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+    .feature-card {
+        width: 98vw !important;
+        min-width: unset;
+        max-width: 98vw;
+        padding: 24px 8px 18px 8px;
+        height: auto;
+    }
+}
+
+/* Beneficios */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 24px;
+    max-width: 1000px;
+    margin: 40px auto 48px auto;
+}
+.benefit-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    padding: 24px 18px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-height: 220px;
+}
+.benefit-num {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #bfc2d1;
+    margin-bottom: 8px;
+}
+.benefit-icon {
+    width: 200px;
+    height: 200px;
+    background: #eaf7e1;
+    border-radius: 50%;
+    margin: 18px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.benefit-icon img, .benefit-icon svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+.benefit-card:nth-child(2) .benefit-icon,
+.benefit-card:nth-child(5) .benefit-icon {
+    background: #e1f0fa;
+}
+.benefit-card h3 {
+    color: #1746a2;
+    font-size: 1.1em;
+    margin: 0 0 8px 0;
+    text-align: center;
+}
+.benefit-card p {
+    color: #444;
+    font-size: 1em;
+    margin: 0;
+    text-align: center;
+}
+
+/* Botón principal */
+.main-btn.blue {
+    background: #1746a2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 24px auto 32px auto;
+    display: block;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.main-btn.blue:hover {
+    background: #0e2e6b;
+}
+
+/* Responsivo */
+@media (max-width: 1100px) {
+    .features-grid, .benefits-grid {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .features-grid, .benefits-grid {
+        max-width: 98vw;
+    }
+}
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        padding: 12px 8px;
+    }
+    .main-title, .section-title {
+        font-size: 2em;
+    }
+    .diagram-box {
+        height: 160px;
+        font-size: 1.2em;
+    }
+    .features-grid, .benefits-grid {
+        gap: 12px;
+    }
+    .feature-card, .benefit-card {
+        width: 98vw;
+        min-width: unset;
+        padding: 16px 8px;
+    }
+} 
+
+/* --- ESTILOS PARA minotaria.html (encapsulados) --- */
+body.minotaria .main-title, body.minotaria .section-title, body.minotaria .main-desc, body.minotaria .section-desc, body.minotaria .diagram-box, body.minotaria .features-grid, body.minotaria .feature-card, body.minotaria .benefits-grid, body.minotaria .benefit-card, body.minotaria .main-btn.blue {
+    /* Aquí van los estilos que solo deben aplicar a minotaria.html, puedes copiar los estilos actuales de minotaria.html aquí */
+} 
+
+/* --- MENÚ HAMBURGUESA RESPONSIVO --- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    margin-left: 16px;
+    z-index: 1002;
+}
+.hamburger span {
+    height: 4px;
+    width: 100%;
+    background: #1746a2;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+    display: block;
+}
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 10px;
+        height: 56px;
+    }
+    .logo2 {
+        height: 56px;
+    }
+    .logo2 img {
+        height: 32px;
+    }
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100vw;
+        height: 100vh;
+        width: 220px;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 80px 24px 24px 24px;
+        box-shadow: -2px 0 12px rgba(0,0,0,0.08);
+        z-index: 1000;
+        font-size: 1.1em;
+        transition: right 0.3s cubic-bezier(.77,0,.18,1);
+    }
+    .nav-links.open {
+        right: 0;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* --- TARJETAS Y SECCIONES RESPONSIVAS --- */
+@media (max-width: 1100px) {
+    .features-grid, .benefits-grid {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 18px;
+    }
+    .feature-card, .benefit-card {
+        width: 98vw !important;
+        min-width: unset;
+        max-width: 98vw;
+        padding: 24px 8px 18px 8px;
+        height: auto;
+    }
+}
+@media (max-width: 700px) {
+    .main-title, .section-title {
+        font-size: 2em;
+    }
+    .diagram-box {
+        height: 160px;
+        font-size: 1.2em;
+        max-width: 98vw;
+    }
+    .hero-img {
+        width: 98vw;
+        height: auto;
+        min-width: 180px;
+    }
+    .main-btn.blue, .main-btn.outline {
+        font-size: 1em;
+        padding: 10px 18px;
+    }
+    .hero-btns {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+/* Imágenes y videos fluidos */
+.hero-img video, .hero-img img, .diagram-box iframe {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    object-fit: contain;
+} 
