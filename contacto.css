@@ -1,0 +1,319 @@
+ /* ================================
+   FUENTE GLOBAL
+   ================================ */
+   .table-contacto,
+   .contact-info,
+   .contact-form,
+   .table-contacto * {
+     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+   }
+   
+
+/* ==========================
+   BLOQUE CONTACTO (TARJETA)
+   ========================== */
+   #contacto {
+    background-color: #F5F5F7;
+    padding: 30px 0;
+  }
+
+  #contacto .text-contactos{
+    text-align: center;
+    padding: 0 0 80px 0;
+  }
+
+  .table-contacto {
+    padding: 0px 150px 30px 150px;
+    
+  }
+
+  .white{
+    background-color: #FFFFFF;
+    display: flex;
+  }
+  
+  /* Panel izquierdo */
+  .contact-info {
+    background: #003799;
+    color: #fff;
+    padding: 15px 25px 15px 15px;
+    flex: 1;
+    border-radius: 18px;
+  }
+  .info-title {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: white;
+    text-align: left;
+  }
+  .info-subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    line-height: 1.4;
+    margin-bottom: 24px;
+    color: white;
+    text-align: left;
+  }
+  .info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .info-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .info-list .icon {
+    font-size: 1.2rem;
+    margin-right: 12px;
+  }
+  .info-list a,
+  .info-list address {
+    color: #fff;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+  
+  /* Panel derecho */
+  .contact-form {
+    flex: 1.2;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 18px;
+  }
+  .form-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .form-row.single {
+    gap: 0;
+  }
+  .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .form-group.full-width {
+    flex: 1;
+  }
+  .form-group label {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: #333;
+  }
+  .form-group input,
+  .form-group textarea {
+    border: none;
+    border-bottom: 1px solid #333;
+    padding: 6px 4px;
+    font-size: 1rem;
+    outline: none;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: #999;
+  }
+  
+  /* Botón enviar */
+  .btn-send {
+    align-self: flex-start;
+    background: #003799;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background .3s ease;
+  }
+  .btn-send:hover {
+    background: #003799;
+  }
+
+
+/* ================================
+   ANIMACIONES EXTRA GENIALES
+   ================================ */
+ /* 1) Campos del formulario: sombra y leve elevación al hover */
+.form-group {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.form-group:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* 2) Inputs/asunto: fondo tenue al focus y animación de border-bottom */
+.form-group input:focus,
+.form-group textarea:focus,
+#asunto:focus {
+  background: rgba(13,71,161,0.05);
+  border-bottom-color: #003799;
+  outline: none;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* 3) Botón: elevación ligera al hover */
+.btn-send {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-send:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* 4) Ítems de contacto: fondo suave y pop al hover */
+.info-list li {
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.info-list li:hover {
+  background: rgba(13,71,161,0.04);
+  transform: translateX(4px);
+}
+
+/* 5) Paneles (info y form): muy sutil al hover */
+.contact-info,
+.contact-form {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.contact-info:hover,
+.contact-form:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+/* ================================
+   ÍCONOS EN BLANCO
+   ================================ */
+.info-list .icon {
+  position: relative;     /* para que z-index funcione */
+  z-index: 2;             /* por encima de cualquier fondo/overlay */
+  display: inline-block;  
+}
+
+.info-list .icon svg {
+  width: 1.4rem;
+  height: auto;
+  fill: #fff !important;   /* ícono blanco */
+  stroke: #000 !important; /* borde negro */
+  stroke-width: 1px !important;
+}
+
+  /* ------------------------ estilo responsive -------------------- */
+  /* 1) Tablets grandes / pantallas medias */
+@media (max-width: 1024px) {
+  .table-contacto {
+    padding: 0 60px 30px 60px;
+  }
+
+  .white {
+    flex-direction: column;
+    gap: 24px;
+    height: auto;
+  }
+
+  .contact-form {
+    padding: 30px 20px;
+  }
+
+  .contact-info {
+    padding: 30px 20px;
+  }
+}
+
+/* 2) Tablets pequeñas / móviles grandes */
+@media (max-width: 768px) {
+  .table-contacto {
+    padding: 0 40px 20px 40px;
+  }
+
+  .white {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.95rem;
+  }
+
+  .btn-send {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+/* 3) Móviles (muy pequeños) */
+@media (max-width: 480px) {
+  #contacto {
+    padding: 20px 0;
+  }
+
+  .table-contacto {
+    padding: 0 20px 20px 20px;
+  }
+
+  .white {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-info,
+  .contact-form {
+    border-radius: 12px;
+    padding: 20px 15px;
+  }
+
+  .info-title {
+    font-size: 1.5rem;
+  }
+  .info-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .info-list li {
+    margin-bottom: 12px;
+  }
+  .info-list .icon {
+    font-size: 1.1rem;
+    margin-right: 8px;
+  }
+  .info-list a,
+  .info-list address {
+    font-size: 0.9rem;
+  }
+
+  .form-row {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .form-group label {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+  .form-group input,
+  .form-group textarea {
+    padding: 4px 3px;
+    border-bottom-width: 1px;
+  }
+  .btn-send {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    align-self: stretch;
+    text-align: center;
+  }
+}
+ 

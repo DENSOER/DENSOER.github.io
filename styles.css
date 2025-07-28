@@ -1,0 +1,549 @@
+/* ================================
+   RESET & GLOBAL
+   ================================ */
+   html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: visible;    
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
+  }
+  
+  /* ================================
+     TIPOGRAFÍA
+     ================================ */
+  .main-title, .section-title,
+  h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: bold;
+    color: #1746a2;
+    text-align: center;
+    margin: 32px 0 16px;
+  }
+  
+  p, .section-desc, .main-desc {
+    font-family: inherit;
+    font-weight: normal;
+    color: #444;
+    font-size: 1.2em;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 32px;
+  }
+  
+  /* ================================
+     LAYOUT PRINCIPAL
+     ================================ */
+  header, .navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 35px;
+    width: 100%;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* logo izq, contenido centro/derecha */
+    padding: 0 25px;
+    z-index: 1000;
+  }
+  
+  main {
+    padding-top: 55px;
+    background-color: #F5F5F7;
+  }
+  
+  /* ================================
+     NAVBAR: LOGO | LINKS | HAMBURGER
+     ================================ */
+  /* Logo */
+  .logo2 {
+    order: 1;
+    margin: 0 auto;    /* sigue centrado */
+    position: relative; 
+    left: 20px;        /* “empuja” 20px hacia la derecha */
+  }
+  .logo2 img {
+    height: 30px;
+    width: auto;
+  }
+  
+  /* Links centrados */
+  .nav-links {
+    order: 2;
+    flex: 1;
+    display: flex;
+    justify-content: center; /* centra los <li> horizontalmente */
+    gap: 45px;
+    list-style: none;
+  }
+  .nav-links li a {
+    color: #222;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .nav-links li a:hover {
+    color: #003087;
+  }
+  
+  /* Hamburguesa (oculta en desktop) */
+  .hamburger {
+    order: 3;
+    display: none;
+    cursor: pointer;
+  }
+  .hamburger span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #1746a2;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  
+  /* ================================
+     HERO SECTION
+     ================================ */
+  .main-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 80vh;
+    padding-top: 32px;
+    background-color: #F5F5F7;
+  }
+  .hero-title {
+    font-size: 4em;
+    font-weight: 400;
+    margin: 32px 0 0;
+    letter-spacing: 1px;
+  }
+  .hero-title sup {
+    font-size: 0.4em;
+    vertical-align: super;
+  }
+  .hero-sub {
+    font-size: 1.7em;
+    margin: 18px 0 32px;
+    font-weight: 400;
+  }
+  .hero-btns {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    justify-content: center;
+  }
+  .hero-btns a {
+    text-decoration: none;
+  }
+  .main-btn.outline,
+  .main-btn.blue {
+    display: inline-block;
+    width: 200px;
+    padding: 12px 0;
+    font-size: 1.3em;
+    font-weight: 700;
+    border-radius: 24px;
+    text-align: center;
+    line-height: 1.2;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+  }
+  .main-btn.blue {
+    background: #003799;
+    color: #F5F5F7;
+    border: none;
+  }
+  .main-btn.blue:hover {
+    background: #002266;
+  }
+  .main-btn.outline {
+    background: #F5F5F7;
+    color: #003799;
+    border: 2px solid #003799;
+  }
+  .hero-img {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+    height: 480px;
+  }
+  .hero-img img,
+  .hero-img video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* ================================
+     DIAGRAMA (FUNCIONALIDAD)
+     ================================ */
+  .diagram-box {
+    background: #F5F5F7;
+    border-radius: 12px;
+    max-width: 900px;
+    aspect-ratio: 16/9;
+    min-height: 320px;
+    margin: 0 auto 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2em;
+    color: #888;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+  }
+  .diagram-box > div,
+  .diagram-box iframe {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 16/9;
+    position: static !important;
+  }
+  
+  /* ================================
+     SECCIÓN: CARACTERÍSTICAS
+     ================================ */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 18px;
+    padding: 0 16px;
+    margin: 40px auto 48px;
+    max-width: 1000px;
+  }
+  .feature-card {
+    position: relative;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(93,116,196,0.08);
+    padding: 32px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 3px solid #5D74C4;
+    border-right: 3px solid #5D74C4;
+    background: #F5F5F7;
+    box-sizing: border-box;
+  }
+  .feature-card.f2,
+  .feature-card.f4 {
+    border-color: #519200;
+    background: #f6faed;
+  }
+  .feature-card::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: inherit;
+    box-shadow: -2.5px 0 0 0 currentColor;
+  }
+  .feature-num {
+    font-size: 46px;
+    font-weight: bold;
+    color: #bfc2d1;
+    margin: 0 0 18px 2px;
+    letter-spacing: 2px;
+  }
+  .feature-card h3 {
+    font-size: 1.18em;
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+  .feature-card p {
+    font-size: 1em;
+    line-height: 1.3;
+    margin: 0;
+  }
+  
+  /* ================================
+     SECCIÓN: BENEFICIOS
+     ================================ */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto 48px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    justify-items: center;
+  }
+  .benefit-card {
+    background: #F5F5F7;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    height: 400px;
+    box-sizing: border-box;
+  }
+  .benefit-num {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #bfc2d1;
+    margin-bottom: 8px;
+  }
+/* ************************************************************ */
+ 
+.benefit-icon {
+  width: 214px;
+  height: 214px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: none;
+  border: 1px solid transparent; /* borde incluido en el tamaño */
+  box-sizing: border-box;
+}
+
+.benefit-icon img,
+.benefit-icon svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 12px; /* margen interno opcional para que no toquen el borde */
+}
+
+/* ✅ Bordes VERDES */
+.benefit-card:nth-child(2) .benefit-icon,
+.benefit-card:nth-child(4) .benefit-icon,
+.benefit-card:nth-child(6) .benefit-icon {
+  border-color: #D7ECBE;
+}
+
+/* ✅ Bordes AZULES */
+.benefit-card:nth-child(1) .benefit-icon,
+.benefit-card:nth-child(3) .benefit-icon,
+.benefit-card:nth-child(5) .benefit-icon {
+  border-color: #C2CBEA;
+}
+
+
+/* ************************************************************ */
+
+  .benefit-card h3 {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0 0 8px;
+    text-align: center;
+    color: black;
+  }
+  .benefit-card p {
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+  }
+  
+  /* ================================
+     BOTÓN PRINCIPAL EN SECCIONES
+     ================================ */
+  .main-btn.blue {
+    background: #1746a2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 24px auto 32px;
+    display: block;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .main-btn.blue:hover {
+    background: #0e2e6b;
+  }
+  
+  /* ================================
+     MEDIA QUERIES (RESPONSIVE)
+     ================================ */
+  /* Tablet grande / móvil: ancho < 900px */
+  @media (max-width: 900px) {
+    header, .navbar {
+      flex-direction: row;
+      padding: 0 16px;
+      justify-content: space-between;
+    }
+    .logo2 img {
+      height: 32px;
+    }
+    @media (max-width: 900px) {
+      .nav-links {
+        justify-content: flex-start !important; /* fuerza que el primer <li> quede pegado bajo el header */
+        padding-top: 20px !important;           /* ajusta si quieres más o menos separación */
+      }
+    }
+    .hamburger {
+      display: flex;
+      order: 3;
+      margin-left: auto;
+      flex-direction: column;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+    }
+    .hamburger span {
+      height: 4px;
+      width: 100%;
+      background: #1746a2;
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+    .nav-links {
+      order: 2;
+      position: fixed;
+      top: 35px;                 /* justo bajo el header (ajusta si tu header cambia de altura) */
+      right: 0;
+      height: calc(100% - 35px); /* ocupa desde ahí hasta abajo */
+      width: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 24px;
+      gap: 16px;
+      background: #fff;
+      box-shadow: -2px 0 12px rgba(0,0,0,0.08);
+      transform: translateX(100%);        /* por defecto “fuera” de pantalla */
+      transition: transform 0.3s ease;
+      z-index: 2000;                      /* siempre encima */
+    }
+    .nav-links.open {
+      transform: translateX(0);  
+    }
+    .nav-links li {
+      width: 100%;
+    }
+    .nav-links li a {
+      display: block;
+      width: 100%;
+      padding: 8px 0;
+    }
+    .diagram-box {
+      max-width: 98vw;
+      min-height: 180px;
+    }
+  }
+  
+  /* Móvil más pequeño: ancho < 600px */
+  @media (max-width: 600px) {
+    .benefits-grid {
+      grid-template-columns: 1fr;
+      padding: 0 12px;
+    }
+    .features-grid {
+      grid-template-columns: 1fr;
+      padding: 0 12px;
+    }
+    .hero-title {
+      font-size: 2.2em;
+    }
+    .hero-sub {
+      font-size: 1.1em;
+    }
+    .hero-btns {
+      flex-direction: column;
+      gap: 12px;
+    }
+    .main-btn.blue,
+    .main-btn.outline {
+      font-size: 1em;
+      padding: 10px 18px;
+    }
+    .diagram-box {
+      font-size: 1.2em;
+    }
+  }
+  
+  /* Pantallas muy pequeñas: ancho < 500px */
+  @media (max-width: 500px) {
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+
+  /* — DESKTOP: centra logo + menú juntos — */
+@media (min-width: 901px) {
+  header, .navbar {
+    justify-content: center !important;  /* centra todo el bloque */
+  }
+  .logo2 {
+    order: 1;
+    margin: 0 60px 0 0 !important;       /* quita desplazamiento previo y deja 20px a la derecha */
+    position: static !important;         /* elimina el left:20px anterior */
+  }
+  .nav-links {
+    order: 2;
+    flex: none !important;               /* para que no tire la hamburguesa fuera */
+  }
+}
+
+
+/* — Aumenta el área clicable de la hamburguesa y separa del borde — */
+.hamburger {
+  display: flex;                   /* asegúrate de que siga visible en móvil */
+  width: 48px;                     /* más ancho */
+  height: 48px;                    /* más alto */
+  padding: 2px;                    /* espacio interior para “click” */
+  margin-right: 16px;              /* separación del borde derecho */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2100;                   /* siempre encima */
+}
+
+/* los tres palitos siguen adaptándose al nuevo tamaño */
+.hamburger span {
+  height: 2px;
+  width: 100%;
+  background: #1746a2;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* — Logo siempre centrado por defecto en desktop — */
+.logo2 {
+  order: 1;
+  margin: 0 auto;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+
+/* — Asegúrate de que tu nav.navbar tenga posición relativa para el z-index funcione — */
+nav.navbar {
+  position: relative;
+  z-index: 2000;
+}
+/* — 1) Ocultar hamburguesa en PC — */
+@media (min-width: 901px) {
+  .hamburger {
+    display: none !important;
+  }
+}
+
+/* — MOBILE: (<900px) sólo aquí movemos el logo cuando el menú está abierto — */
+@media (max-width: 900px) {
+  .logo2 {
+    transform: translateX(-40px);  /* SIEMPRE se mostrará hacia la izquierda en móviles */
+    margin: 0 !important;           /* elimina centrado si estaba activo */
+  }
+}
