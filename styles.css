@@ -1,0 +1,839 @@
+/* ================================
+   RESET & GLOBAL
+   ================================ */
+   html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;    /* Prevenir scroll horizontal */
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Prevenir scroll horizontal en todos los elementos */
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Asegurar que las secciones no se desborden */
+  section {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  
+  /* Asegurar que las imágenes no se desborden */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Asegurar que los enlaces no se desborden */
+  a {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Asegurar que los textos largos no se desborden */
+  p, h1, h2, h3, h4, h5, h6, span, div {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* ================================
+     TIPOGRAFÍA
+     ================================ */
+  .main-title, .section-title,
+  h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: bold;
+    color: #1746a2;
+    text-align: center;
+    margin: 32px 0 16px;
+  }
+
+  .section-title{
+    font-size: 68px;
+  }
+  
+  p, .section-desc, .main-desc {
+    font-family: inherit;
+    font-weight: normal;
+    color: #444;
+    font-size: 1.2em;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 32px;
+  }
+  
+  /* ================================
+     LAYOUT PRINCIPAL
+     ================================ */
+  header, .navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 35px;
+    width: 100%;
+    max-width: 100vw;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* logo izq, contenido centro/derecha */
+    padding: 0 25px;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+  
+  main {
+    padding-top: 55px;
+    background-color: #F5F5F7;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* ================================
+     NAVBAR: LOGO | LINKS | HAMBURGER
+     ================================ */
+  /* Logo */
+  .logo2 {
+    order: 1;
+    margin: 0 auto;    /* sigue centrado */
+    position: relative; 
+    left: 20px;        /* "empuja" 20px hacia la derecha */
+  }
+  .logo2 img {
+    height: 30px;
+    width: auto;
+  }
+  
+  /* Links centrados */
+  .nav-links {
+    order: 2;
+    flex: 1;
+    display: flex;
+    justify-content: center; /* centra los <li> horizontalmente */
+    gap: 45px;
+    list-style: none;
+  }
+  .nav-links li a {
+    color: #222;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .nav-links li a:hover {
+    color: #003087;
+  }
+  
+  /* Hamburguesa (oculta en desktop) */
+  .hamburger {
+    order: 3;
+    display: none;
+    cursor: pointer;
+  }
+  .hamburger span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #1746a2;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  
+  /* ================================
+     HERO SECTION
+     ================================ */
+  .main-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 80vh;
+    padding-top: 32px;
+    background-color: #F5F5F7;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  .hero-title {
+    font-size: 4em;
+    font-weight: 400;
+    margin: 32px 0 0;
+    letter-spacing: 1px;
+    color: black;
+  }
+  .hero-title sup {
+    font-size: 0.4em;
+    vertical-align: super;
+  }
+  .hero-sub {
+    font-size: 36px;
+    margin: 18px 0 32px;
+    font-weight: 400;
+  }
+  .hero-btns {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    justify-content: center;
+    
+  }
+  .hero-btns a {
+    text-decoration: none;
+  }
+  .main-btn.outline,
+  .main-btn.blue {
+    display: inline-block;
+    width: 200px;
+    padding: 12px 0;
+    font-size: 1.3em;
+    font-weight: 700;
+    border-radius: 24px;
+    text-align: center;
+    line-height: 1.2;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+  }
+  .main-btn.blue {
+    background: #003799;
+    color: #F5F5F7;
+    border: none;
+  }
+  .main-btn.blue:hover {
+    background: #002266;
+  }
+  .main-btn.outline {
+    background: #F5F5F7;
+    color: #003799;
+    border: 2px solid #003799;
+  }
+  .hero-img {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 878px;
+    height: auto;
+    box-sizing: border-box;
+  }
+  .hero-img img,
+  .hero-img video {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  
+  /* ================================
+     DIAGRAMA (FUNCIONALIDAD)
+     ================================ */
+  .diagram-box {
+    background: #F5F5F7;
+    border-radius: 12px;
+    max-width: 900px;
+    width: 100%;
+    aspect-ratio: 16/9;
+    min-height: 320px;
+    margin: 0 auto 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2em;
+    color: #888;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .diagram-box > div,
+  .diagram-box iframe {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 16/9;
+    position: static !important;
+    max-width: 100%;
+  }
+  
+  /* ================================
+     SECCIÓN: CARACTERÍSTICAS
+     ================================ */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 18px;
+    padding: 0 16px;
+    margin: 40px auto 48px;
+    max-width: 1000px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .feature-card {
+    position: relative;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(93,116,196,0.08);
+    padding: 32px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 3px solid #5D74C4;
+    border-right: 3px solid #5D74C4;
+    background: #F5F5F7;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .feature-card.f2,
+  .feature-card.f4 {
+    border-color: #519200;
+    background: #f6faed;
+  }
+  .feature-card::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: inherit;
+    box-shadow: -2.5px 0 0 0 currentColor;
+  }
+  .feature-num {
+    font-size: 46px;
+    font-weight: bold;
+    color: #bfc2d1;
+    margin: 0 0 18px 2px;
+    letter-spacing: 2px;
+  }
+  .feature-card h3 {
+    font-size: 1.18em;
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+  .feature-card p {
+    font-size: 1em;
+    line-height: 1.3;
+    margin: 0;
+  }
+  
+  /* ================================
+     SECCIÓN: BENEFICIOS
+     ================================ */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto 48px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    justify-items: center;
+  }
+  .benefit-card {
+    background: #F5F5F7;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 273.68px;
+    height: auto;
+    min-height: 509.04px;
+    box-sizing: border-box;
+  }
+  .benefit-num {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #bfc2d1;
+    margin-bottom: 8px;
+  }
+/* ************************************************************ */
+ 
+.benefit-icon {
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 214.04px;
+  height: 214.03px;
+  max-width: 100%;
+
+}
+
+.benefit-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* ************************************************************ */
+
+  .benefit-card h3 {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0 0 8px;
+    text-align: center;
+    color: black;
+  }
+  .benefit-card p {
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+  }
+  
+  /* ================================
+     BOTÓN PRINCIPAL EN SECCIONES
+     ================================ */
+  .main-btn.blue {
+    background: #1746a2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 24px auto 32px;
+    display: block;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .main-btn.blue:hover {
+    background: #0e2e6b;
+  }
+  
+  /* ================================
+     MEDIA QUERIES (RESPONSIVE) - MEJORADO
+     ================================ */
+  
+  /* ================================
+     TABLET GRANDE / MÓVIL: ANCHO < 900px
+     ================================ */
+  @media (max-width: 900px) {
+    /* Header y Navbar */
+    header, .navbar {
+      flex-direction: row;
+      padding: 0 16px;
+      justify-content: space-between;
+      height: 50px; /* Aumentar altura para mejor usabilidad */
+    }
+    
+    .logo2 img {
+      height: 32px;
+    }
+    
+    /* Hamburguesa mejorada */
+    .hamburger {
+      display: flex;
+      order: 3;
+      margin-left: auto;
+      flex-direction: column;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      padding: 2px;
+      margin-right: 16px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 2100;
+    }
+    
+    .hamburger span {
+      height: 2px;
+      width: 100%;
+      background: #1746a2;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    
+    /* Menú móvil mejorado */
+    .nav-links {
+      order: 2;
+      position: fixed;
+      top: 50px;
+      right: 0;
+      height: calc(100% - 50px);
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 24px;
+      gap: 16px;
+      background: #fff;
+      box-shadow: -2px 0 12px rgba(0,0,0,0.08);
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      z-index: 2000;
+    }
+    
+    .nav-links.open {
+      transform: translateX(0);
+    }
+    
+    .nav-links li {
+      width: 100%;
+    }
+    
+    .nav-links li a {
+      display: block;
+      width: 100%;
+      padding: 12px 0;
+      font-size: 16px;
+    }
+    
+    /* Logo en móvil */
+    .logo2 {
+      transform: translateX(-40px);
+      margin: 0 !important;
+    }
+    
+    /* Main ajustado */
+    main {
+      padding-top: 70px;
+    }
+    
+    /* Hero section responsive */
+    .main-hero {
+      min-height: 70vh;
+      padding: 20px 16px;
+    }
+    
+    .hero-title {
+      font-size: 3em;
+      margin: 20px 0 0;
+    }
+    
+    .hero-sub {
+      font-size: 24px;
+      margin: 12px 0 24px;
+    }
+    
+    .hero-btns {
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    
+    .main-btn.outline,
+    .main-btn.blue {
+      width: 280px;
+      padding: 14px 0;
+      font-size: 1.1em;
+    }
+    
+    .hero-img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      margin-top: 30px;
+    }
+    
+    /* Diagrama responsive */
+    .diagram-box {
+      max-width: 95vw;
+      min-height: 200px;
+      margin: 0 16px 32px;
+    }
+    
+    /* Títulos responsive */
+    .section-title {
+      font-size: 48px;
+      margin: 24px 0 16px;
+    }
+    
+    .main-desc, .section-desc {
+      font-size: 18px;
+      margin: 0 auto 24px;
+      padding: 0 16px;
+    }
+  }
+  
+  /* ================================
+     MÓVIL MEDIANO: ANCHO < 600px
+     ================================ */
+  @media (max-width: 600px) {
+    /* Header más compacto */
+    header, .navbar {
+      height: 45px;
+      padding: 0 12px;
+    }
+    
+    .logo2 img {
+      height: 28px;
+    }
+    
+    .hamburger {
+      width: 44px;
+      height: 44px;
+      margin-right: 12px;
+    }
+    
+    /* Menú móvil más compacto */
+    .nav-links {
+      top: 45px;
+      height: calc(100% - 45px);
+      width: 260px;
+      padding: 16px 20px;
+    }
+    
+    main {
+      padding-top: 60px;
+    }
+    
+    /* Hero section más compacto */
+    .main-hero {
+      min-height: 60vh;
+      padding: 16px 12px;
+    }
+    
+    .hero-title {
+      font-size: 2.5em;
+      margin: 16px 0 0;
+    }
+    
+    .hero-sub {
+      font-size: 20px;
+      margin: 10px 0 20px;
+    }
+    
+    .main-btn.outline,
+    .main-btn.blue {
+      width: 260px;
+      padding: 12px 0;
+      font-size: 1em;
+    }
+    
+    /* Grids responsive */
+    .benefits-grid {
+      grid-template-columns: 1fr;
+      padding: 0 12px;
+      gap: 20px;
+    }
+    
+    .features-grid {
+      grid-template-columns: 1fr;
+      padding: 0 12px;
+      gap: 16px;
+    }
+    
+    /* Cards más compactas */
+    .benefit-card {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      min-height: 400px;
+      padding: 20px 16px;
+    }
+    
+    .feature-card {
+      padding: 24px 16px 16px;
+    }
+    
+    /* Títulos más pequeños */
+    .section-title {
+      font-size: 36px;
+      margin: 20px 0 12px;
+    }
+    
+    .main-desc, .section-desc {
+      font-size: 16px;
+      margin: 0 auto 20px;
+      padding: 0 12px;
+    }
+    
+    /* Números de características */
+    .feature-num {
+      font-size: 36px;
+      margin: 0 0 12px 2px;
+    }
+    
+    .feature-card h3 {
+      font-size: 1.1em;
+    }
+    
+    .feature-card p {
+      font-size: 0.95em;
+    }
+    
+    /* Beneficios */
+    .benefit-num {
+      font-size: 1.8em;
+    }
+    
+    .benefit-card h3 {
+      font-size: 20px;
+    }
+    
+    .benefit-card p {
+      font-size: 14px;
+    }
+    
+    /* Iconos de beneficios */
+    .benefit-icon {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  
+  /* ================================
+     PANTALLAS MUY PEQUEÑAS: ANCHO < 400px
+     ================================ */
+  @media (max-width: 400px) {
+    /* Header ultra compacto */
+    header, .navbar {
+      height: 40px;
+      padding: 0 8px;
+    }
+    
+    .logo2 img {
+      height: 24px;
+    }
+    
+    .hamburger {
+      width: 40px;
+      height: 40px;
+      margin-right: 8px;
+    }
+    
+    .nav-links {
+      top: 40px;
+      height: calc(100% - 40px);
+      width: 240px;
+      padding: 12px 16px;
+    }
+    
+    main {
+      padding-top: 50px;
+    }
+    
+    /* Hero ultra compacto */
+    .main-hero {
+      min-height: 50vh;
+      padding: 12px 8px;
+    }
+    
+    .hero-title {
+      font-size: 2em;
+      margin: 12px 0 0;
+    }
+    
+    .hero-sub {
+      font-size: 18px;
+      margin: 8px 0 16px;
+    }
+    
+    .main-btn.outline,
+    .main-btn.blue {
+      width: 240px;
+      padding: 10px 0;
+      font-size: 0.95em;
+    }
+    
+    /* Títulos ultra pequeños */
+    .section-title {
+      font-size: 28px;
+      margin: 16px 0 10px;
+    }
+    
+    .main-desc, .section-desc {
+      font-size: 14px;
+      margin: 0 auto 16px;
+      padding: 0 8px;
+    }
+    
+    /* Cards ultra compactas */
+    .benefit-card {
+      padding: 16px 12px;
+      min-height: 350px;
+    }
+    
+    .feature-card {
+      padding: 20px 12px 12px;
+    }
+    
+    /* Números más pequeños */
+    .feature-num {
+      font-size: 28px;
+      margin: 0 0 8px 2px;
+    }
+    
+    .benefit-num {
+      font-size: 1.5em;
+    }
+    
+    /* Iconos más pequeños */
+    .benefit-icon {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  
+  /* ================================
+     DESKTOP: CENTRA LOGO + MENÚ JUNTOS
+     ================================ */
+  @media (min-width: 901px) {
+    header, .navbar {
+      justify-content: center !important;
+    }
+    
+    .logo2 {
+      order: 1;
+      margin: 0 60px 0 0 !important;
+      position: static !important;
+    }
+    
+    .nav-links {
+      order: 2;
+      flex: none !important;
+    }
+    
+    .hamburger {
+      display: none !important;
+    }
+  }
+  
+  /* ================================
+     MEJORAS ADICIONALES PARA TABLET
+     ================================ */
+  @media (min-width: 601px) and (max-width: 900px) {
+    .hero-title {
+      font-size: 3.5em;
+    }
+    
+    .hero-sub {
+      font-size: 28px;
+    }
+    
+    .section-title {
+      font-size: 56px;
+    }
+    
+    .main-desc, .section-desc {
+      font-size: 20px;
+    }
+    
+    .benefits-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+  }
