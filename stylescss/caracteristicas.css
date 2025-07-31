@@ -1,0 +1,74 @@
+.caracteristicas_text{
+    width: 830px;
+    height: 159px;
+    margin: auto;
+    margin: 0 auto 10px auto; /* ↓ reduce espacio inferior */
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-bottom: 5px solid #fff;
+  }
+  
+  .section-title {
+    font-size: 48px;
+    color: #003799;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .section-subtitle {
+    font-size: 24px;
+    color: #004fd4;
+    margin-bottom: 40px;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 1156.87px;
+    height: 567.12px;
+    gap: 20px;
+    opacity: 1;
+    margin: 0 auto;
+    padding-top: 0; /* ← antes estaba en 40px */
+  }
+  
+  .feature-card {
+    width: 371.89;
+    height: 273.556;
+    padding-top: 12.1px;
+    padding-right: 28.02px;
+    padding-bottom: 24.21px;
+    padding-left: 28.02px;
+    opacity: 1;
+    border-radius: 13.19px;
+    background-color: #F5F5F7;
+    box-shadow: 0px 0px 15.13px 0px #5D74C440;
+
+
+  }
+  
+  .feature-num {
+    font-size: 46.4px;
+    font-weight: bold;
+    color: #ccc;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .feature-card h3 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+  }
+  
+  .feature-card p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+  }
+  

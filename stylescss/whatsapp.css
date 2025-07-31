@@ -1,0 +1,106 @@
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: inline-flex;
+    align-items: center;
+    background-color: #25D366;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  .whatsapp-btn:hover {
+    background-color: #1ebe57;
+  }
+  .whatsapp-btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+  }
+
+/* ================================
+   RESPONSIVE WHATSAPP BUTTON
+   ================================ */
+
+/* ================================
+   TABLET PEQUEÑA
+   ================================ */
+@media (max-width: 768px) {
+  .whatsapp-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 18px;
+  }
+  
+  .whatsapp-btn img {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+  }
+}
+
+/* ================================
+   MÓVILES GRANDES
+   ================================ */
+@media (max-width: 600px) {
+  .whatsapp-btn {
+    bottom: 12px;
+    right: 12px;
+    padding: 5px 8px;
+    font-size: 12px;
+    border-radius: 16px;
+  }
+  
+  .whatsapp-btn img {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
+}
+
+/* ================================
+   MÓVILES PEQUEÑOS
+   ================================ */
+@media (max-width: 480px) {
+  .whatsapp-btn {
+    bottom: 10px;
+    right: 10px;
+    padding: 4px 6px;
+    font-size: 11px;
+    border-radius: 14px;
+  }
+  
+  .whatsapp-btn img {
+    width: 14px;
+    height: 14px;
+    margin-right: 3px;
+  }
+}
+
+/* ================================
+   MÓVILES MUY PEQUEÑOS
+   ================================ */
+@media (max-width: 360px) {
+  .whatsapp-btn {
+    bottom: 8px;
+    right: 8px;
+    padding: 3px 5px;
+    font-size: 10px;
+    border-radius: 12px;
+  }
+  
+  .whatsapp-btn img {
+    width: 12px;
+    height: 12px;
+    margin-right: 2px;
+  }
+}
