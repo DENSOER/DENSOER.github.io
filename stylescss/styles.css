@@ -1,0 +1,29 @@
+/* ESTILOS DE TODA LA PAGINA */
+@font-face {
+    font-family:  Century Gothic;
+    src: url('fonts/CenturyGothic.ttf') format('truetype');
+  }
+  
+body{
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    gap: 60px !important;
+    opacity: 1;
+    background-color: #F5F5F7;
+    font-family:  Century Gothic;
+    margin: 0 auto
+}
+
+
+
+
+
+
+
+
+
+
+
+  
+

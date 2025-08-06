@@ -1,0 +1,238 @@
+/* Sección de Contacto */
+.section.contacto {
+  background-color: #f5f5f5;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px !important;
+}
+
+.section {
+  gap: 60px !important;
+}
+
+/* Título principal */
+.section.contacto .section-title {
+  font-family: Century Gothic;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 4.25rem; /* 68px */
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #003899;
+}
+
+/* Subtítulo */
+.section.contacto .text-contactos {
+  font-size: 1.2rem;
+  color: #374151;
+  text-align: center;
+  margin-bottom: 60px;
+  font-family: Century Gothic;
+  font-weight: 400;
+}
+
+/* Contenedor principal */
+.table-contacto {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.table-contacto .white {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  width: 72.25rem;
+  height: 447px;
+  gap: 10px;
+  opacity: 1;
+  padding: 10px;
+}
+
+/* Panel izquierdo - Información de contacto */
+.contact-info {
+  background: #003899;
+  color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 29.625rem;
+  height: 426px;
+  justify-content: space-between;
+  opacity: 1;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.info-title {
+  font-family: Century Gothic;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 1.625rem; /* 26px */
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.info-subtitle {
+  font-family: Century Gothic;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 1.125rem; /* 18px */
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  font-family: Century Gothic;
+  font-weight: 400;
+}
+
+.info-list li:last-child {
+  margin-bottom: 0;
+}
+
+.info-list .icon {
+  margin-right: 15px;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 2px;
+}
+
+.info-list .icon img {
+  width: 1.25rem;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.info-list a,
+.info-list address {
+  color: white;
+  text-decoration: none;
+  font-family: Century Gothic;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 1.125rem; /* 18px */
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.info-list a:hover {
+  text-decoration: underline;
+}
+
+/* Panel derecho - Formulario */
+.contact-form {
+  width: 40.75rem;
+  height: 427px;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  opacity: 1;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.form-row.single {
+  flex-direction: column;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 8px;
+  font-family: Century Gothic;
+  text-align: left;
+}
+
+.form-group input {
+  border: none;
+  border-bottom: 2px solid #8D8D8D;
+  font-size: 1rem;
+  background: transparent;
+  color: #000000;
+  font-family: Century Gothic;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-bottom-color: #003899;
+}
+
+.form-group input::placeholder {
+  color: #8D8D8D;
+  font-family: Century Gothic;
+}
+
+/* Botón de envío */
+.btn-send {
+  width: 35.75rem;
+  height: 52.19px;
+  padding-top: 14.5px;
+  padding-right: 46.39px;
+  padding-bottom: 14.5px;
+  padding-left: 46.39px;
+  gap: 9.67px;
+  opacity: 1;
+  border-radius: 14.5px;
+
+  background-color: #003899;
+  font-family: Century Gothic;
+  font-weight: 700px;
+  font-style: Bold;
+  font-size: 1.125rem; /* 18px */
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #FFFFFF;
+  box-shadow: #0000001F;
+}
+
+.btn-send:hover {
+  background: #002d7a;
+}
+
+
+
+
+/* ********************************************** */
+/* MODO RESPONSIVE PARA UNA PATANLLA DE  1366X768*/
+/* ********************************************** */

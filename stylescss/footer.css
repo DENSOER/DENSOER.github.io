@@ -1,0 +1,189 @@
+/* Footer */
+.footer-mino {
+  background: #003899;
+  color: white;
+  padding: 40px 20px 40px;
+  font-family: Century Gothic;
+  max-width: 1440px;
+  /* max-height: 340px;  */
+  gap: 60px !important;
+}
+
+/* Línea divisoria */
+.footer-mino hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 auto 40px;
+  max-width: 1200px;
+}
+
+/* Contenedor principal del footer */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr 2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Sección de marca y contacto */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  width: 124.15px;
+  height: 27px;
+  margin-bottom: 25px;
+  filter: brightness(0) invert(1);
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-family: Century Gothic;
+  font-weight: 400px;
+  font-style: Regular;
+  font-size: 1rem; /* 16px */
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.contact-list li:last-child {
+  margin-bottom: 0;
+}
+
+.contact-list .icon {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.contact-list .icon img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+  display: block;
+}
+
+.contact-list .icon svg {
+  width: 16px;
+  height: 16px;
+  fill: white;
+  display: block;
+}
+
+/* Secciones de menú */
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-menu h4 {
+  font-family: Century Gothic;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.625rem; /* 26px */
+  letter-spacing: 0%;
+  margin: 0 0 20px 0;
+  color: white;
+  text-align: left;
+}
+
+.footer-menu a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.9rem; /* ya estaba en rem */
+  line-height: 2;
+  transition: color 0.3s ease;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.footer-menu a:hover {
+  color: white;
+}
+
+/* Sección de newsletter */
+.footer-newsletter {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-newsletter h4 {
+  font-size: 1.1rem; /* ya estaba en rem */
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  color: white;
+  text-align: left;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0;
+  margin-bottom: 15px;
+}
+
+.newsletter-form input[type="email"] {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px 0 0 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 0.9rem; /* ya estaba en rem */
+  font-family: Century Gothic;
+}
+
+.newsletter-form input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter-form input[type="email"]:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.newsletter-form button {
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  color: white;
+  font-size: 0.9rem; /* ya estaba en rem */
+  font-weight: 500;
+  cursor: pointer;
+  font-family: Century Gothic;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.newsletter-form button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter-note {
+  font-size: 0.8rem; /* ya estaba en rem */
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+  margin: 0;
+  font-style: italic;
+}
