@@ -4,9 +4,11 @@
   color: white;
   padding: 40px 20px 40px;
   font-family: Century Gothic;
-  max-width: 1440px;
-  /* max-height: 340px;  */
-  gap: 60px !important;
+  /* max-width: 1440px; */ /* ❌ QUÍTALO */
+  width: 100vw;              /* ✅ OCUPA TODO EL ANCHO DE LA PANTALLA */
+  position: relative;        /* ✅ NECESARIO SI USAS centering por transform */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Línea divisoria */
