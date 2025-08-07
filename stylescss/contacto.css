@@ -2,17 +2,15 @@
 .section.contacto {
   background-color: #f5f5f5;
   padding: 0;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 60px !important;
+  
 }
 
-.section {
-  gap: 60px !important;
-}
 
 /* Título principal */
 .section.contacto .section-title {
@@ -24,6 +22,7 @@
   letter-spacing: 0%;
   text-align: center;
   color: #003899;
+  
 }
 
 /* Subtítulo */
