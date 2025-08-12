@@ -1,6 +1,6 @@
 /* ESTILOS DE TODA LA PAGINA */
 @font-face {
-    font-family:  Century Gothic;
+  font-family: 'Quicksand';
     src: url('fonts/CenturyGothic.ttf') format('truetype');
   }
   
@@ -10,7 +10,7 @@ body{
     gap: 60px !important;
     opacity: 1;
     background-color: #F5F5F7;
-    font-family:  Century Gothic;
+    font-family: 'Quicksand';
     margin: 0 auto
 }
 
