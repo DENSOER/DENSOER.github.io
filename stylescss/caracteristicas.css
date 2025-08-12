@@ -25,7 +25,7 @@
 }
 
 .section-subtitle {
-  font-family: Century Gothic;
+  font-family: 'Quicksand';
   font-weight: 700;
   font-style: Bold;
   font-size: 2.875rem; /* 46px */
@@ -82,7 +82,7 @@
   font-size: 1.125rem; /* 18px */
   color: #333;
   line-height: 1.5;
-  font-family: Century Gothic;
+  font-family: 'Quicksand';
   font-weight: 400;
   font-style: Regular;
   line-height: 100%;
