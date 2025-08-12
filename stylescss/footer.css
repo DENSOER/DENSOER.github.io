@@ -1,0 +1,285 @@
+/* Footer */
+.footer-mino {
+  background: #003899;
+  color: white;
+  padding: 40px 20px 40px;
+  
+  /* max-width: 1440px; */ /* ❌ QUÍTALO */
+  width: 100vw;              /* ✅ OCUPA TODO EL ANCHO DE LA PANTALLA */
+  position: relative;        /* ✅ NECESARIO SI USAS centering por transform */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Línea divisoria */
+.footer-mino hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 auto 40px;
+  max-width: 1200px;
+}
+
+/* Contenedor principal del footer */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr 2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Sección de marca y contacto */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  width: 124.15px;
+  height: 27px;
+  margin-bottom: 25px;
+  filter: brightness(0) invert(1);
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  
+  font-weight: 400px;
+  font-style: Regular;
+  font-size: 1rem; /* 16px */
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.contact-list li:last-child {
+  margin-bottom: 0;
+}
+
+.contact-list .icon {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.contact-list .icon img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+  display: block;
+}
+
+.contact-list .icon svg {
+  width: 16px;
+  height: 16px;
+  fill: white;
+  display: block;
+}
+
+/* Secciones de menú */
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-menu h4 {
+  
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.625rem; /* 26px */
+  letter-spacing: 0%;
+  margin: 0 0 20px 0;
+  color: white;
+  text-align: left;
+}
+
+.footer-menu a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.9rem; /* ya estaba en rem */
+  line-height: 2;
+  transition: color 0.3s ease;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.footer-menu a:hover {
+  color: white;
+}
+
+/******************* Sección de newsletter ****************/
+/* -------- Newsletter: contenedor (wrapper) -------- */
+.newsletter-form {
+  display: flex;
+  flex-direction: column; /* importante: apila título, mensaje, form y nota */
+  gap: 8px;
+  margin-bottom: 15px;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* Mensaje que aparece arriba del form */
+.newsletter-form .newsletter-msg {
+  display: block;
+  min-height: 1.25rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
+  color: #ffffff;                 /* texto blanco sobre fondo verde */
+  background: #28a745;            /* verde éxito */
+  border: 1px solid rgba(255,255,255,0.06);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity .25s ease, transform .25s ease;
+  pointer-events: none;
+}
+
+/* Mostrar mensaje */
+.newsletter-form .newsletter-msg.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Estilo error (rojo) */
+.newsletter-form .newsletter-msg.error {
+  background: #dc3545;
+  color: #fff;
+  border-color: rgba(255,255,255,0.06);
+}
+
+/* -------- El form interno (input + botón) -------- */
+/* Nos aseguramos de que el <form> interno mantenga layout horizontal */
+.newsletter-form > form {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  align-items: center;
+}
+
+/* Input del form interno (específico) */
+.newsletter-form > form input[type="email"] {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px 0 0 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 0.9rem;
+  
+}
+
+/* Placeholder */
+.newsletter-form > form input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Focus */
+.newsletter-form > form input[type="email"]:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Botón */
+.newsletter-form > form button {
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.newsletter-form > form button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Nota debajo del form (mantener la que ya tenías) */
+.newsletter-note {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+  margin: 0;
+  font-style: italic;
+}
+
+
+/* ******************************************************* */
+.newsletter-form {
+  display: flex;
+  gap: 0;
+  margin-bottom: 15px;
+}
+
+.newsletter-form input[type="email"] {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px 0 0 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 0.9rem; /* ya estaba en rem */
+  
+}
+
+.newsletter-form input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter-form input[type="email"]:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.newsletter-form button {
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  color: white;
+  font-size: 0.9rem; /* ya estaba en rem */
+  font-weight: 500;
+  cursor: pointer;
+  
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.newsletter-form button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter-note {
+  font-size: 0.8rem; /* ya estaba en rem */
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+  margin: 0;
+  font-style: italic;
+}
