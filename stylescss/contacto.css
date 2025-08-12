@@ -14,7 +14,7 @@
 
 /* Título principal */
 .section.contacto .section-title {
-  font-family: Century Gothic;
+  font-family: 'Quicksand';
   font-weight: 700;
   font-style: Bold;
   font-size: 4.25rem; /* 68px */
@@ -31,7 +31,7 @@
   color: #374151;
   text-align: center;
   margin-bottom: 60px;
-  font-family: Century Gothic;
+  font-family: 'Quicksand';
   font-weight: 400;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .info-title {
-  font-family: Century Gothic;
+  font-family: 'Quicksand';
   font-weight: 700;
   font-style: Bold;
   font-size: 1.625rem; /* 26px */
@@ -82,7 +82,7 @@
 }
 
 .info-subtitle {
-  font-family: Century Gothic;
+  font-family: 'Quicksand';
   font-weight: 400;
   font-style: Regular;
   font-size: 1.125rem; /* 18px */
@@ -101,7 +101,7 @@
   display: flex;
   align-items: flex-start;
   margin-bottom: 25px;
-  font-family: Century Gothic;
+  font-family: 'Quicksand';
   font-weight: 400;
 }
 
@@ -126,7 +126,7 @@
 .info-list address {
   color: white;
   text-decoration: none;
-  font-family: Century Gothic;
+  font-family: 'Quicksand';
   font-weight: 400;
   font-style: Regular;
   font-size: 1.125rem; /* 18px */
@@ -176,7 +176,7 @@
   font-weight: 500;
   color: #000000;
   margin-bottom: 8px;
-  font-family: Century Gothic;
+  font-family: 'Quicksand';
   text-align: left;
 }
 
@@ -186,7 +186,7 @@
   font-size: 1rem;
   background: transparent;
   color: #000000;
-  font-family: Century Gothic;
+  font-family: 'Quicksand';
   transition: border-color 0.3s ease;
   width: 100%;
 }
@@ -198,7 +198,7 @@
 
 .form-group input::placeholder {
   color: #8D8D8D;
-  font-family: Century Gothic;
+  font-family: 'Quicksand';
 }
 
 /* Botón de envío */
@@ -214,7 +214,7 @@
   border-radius: 14.5px;
 
   background-color: #003899;
-  font-family: Century Gothic;
+  font-family: 'Quicksand';
   font-weight: 700px;
   font-style: Bold;
   font-size: 1.125rem; /* 18px */
