@@ -5,7 +5,7 @@ body{
     gap: 60px !important;
     opacity: 1;
     background-color: #F5F5F7;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand';
     margin: 0 auto
 }
 
@@ -34,4 +34,5 @@ body {
 
 
   
+
 
