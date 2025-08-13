@@ -82,6 +82,14 @@
   display: block;
 }
 
+.link{
+  width: 150px;
+}
+
+.noticias{
+  width: 150px;
+}
+
 .contact-list .icon svg {
   width: 16px;
   height: 16px;
