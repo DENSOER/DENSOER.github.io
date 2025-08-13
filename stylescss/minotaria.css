@@ -1,0 +1,94 @@
+.titulosistema{
+  padding-top: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 57px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+
+  
+}
+
+.marcaregistrada{
+  font-size: 30px;
+  vertical-align: top;
+}
+
+/* logo texto */
+.imgminotaria {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+p {
+  
+  font-family: Century Gothic;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.main-btn.primary {
+  width: 127px;
+  height: 43px;
+  opacity: 1;
+  padding-top: 11px;
+  padding-right: 21px;
+  padding-bottom: 11px;
+  padding-left: 21px;
+  gap: 24px;
+  border-radius: 30px;
+  background-color: #003799;
+  color: white;
+  text-decoration: none;
+
+}
+
+.main-btn.secondary {
+  width: 115px;
+  height: 43px;
+  opacity: 1;
+  padding-top: 11px;
+  padding-right: 21px;
+  padding-bottom: 11px;
+  padding-left: 21px;
+  gap: 12px;
+  border-radius: 30px;
+  border-width: 1px;
+  border: 1px solid #003799;
+  color: #003799;
+  text-decoration: none;
+  
+}
+
+.main-btn.secondary:hover{
+  background-color: #003799;
+  color: white;
+}
+
+
+.hero-img {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img img {
+  max-width: 291.0799865722656px;
+  height: 384.6866455078125px;
+}
