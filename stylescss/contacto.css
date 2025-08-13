@@ -27,13 +27,15 @@
 
 /* Subtítulo */
 .section.contacto .text-contactos {
-  font-size: 1.2rem;
-  color: #374151;
+  font-size: 1.625rem;
+  color: #252525;
   text-align: center;
   margin-bottom: 60px;
   
   font-weight: 400;
 }
+
+
 
 /* Contenedor principal */
 .table-contacto {
