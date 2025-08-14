@@ -18,6 +18,19 @@ body {
 
 
 
+h1{
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+p{
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+
+
+
 .separacionB {
   width: 100vw;             /* Ocupa todo el ancho de la ventana del navegador */
   height: 8px;              /* Altura del separador */
