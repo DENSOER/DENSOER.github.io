@@ -20,19 +20,20 @@
     <!-- ---------------------------------------------------- -->
     <!-- ----------------------- menu ----------------------- -->
     <!-- ---------------------------------------------------- -->
-     <header>
+    <header>
       <nav class="navbar-fixed">
         <div class="navbar-content">
           <ul class="navigation">
             <li> <a href="index.html"><img src="img/logo_index_menu.svg" alt="Logo"></a> </li>
-            <li><a href="#que-es">Productos</a></li>
-            <li><a href="#caracteristicas">Capacitación</a></li>
-            <li><a href="https://mideclaranot.com/dnot/index.php?s=" target="_blank" rel="noopener noreferrer">Noticias</a></li>
+            <!-- <li><a href="#que-es">¿Qué es?</a></li>
+            <li><a href="#funcionalidad">Funcionalidad</a></li>
+            <li><a href="#caracteristicas">Características</a></li> -->
+            <li><a href="minotaria.html">miNotaría/UIF</a></li> 
             <li><a href="minotaria.html#contacto">Contacto</a></li>
           </ul>
         </div>
       </nav>
-    </header>
+    </header>  
     <!-- ---------------------------------------------------- -->
     <!-- ---------------- AVISO DE PRIVACIDAD --------------- -->
     <!-- ---------------------------------------------------- -->
@@ -103,182 +104,180 @@
     <!-- ---------------------------------------------------- -->
      
     <footer class="footer-mino">
-        <br>
-        <hr style="border: none; height: 0.1px; background-color: white;">
-        
-        <div class="footer-container">
-          <!-- Logo + Contacto -->
-          <div class="footer-brand">
-            <img src="img/Group 1000001785.png" alt="Logo" class="footer-logo">
-            <ul class="contact-list">
-              <li>
-                <!-- Teléfono -->
-                <span class="icon">
-                 <br><img src="img/bxs_phone-call.svg" alt="">
-                </span>
-                
-                &nbsp; 55‑4783‑3185
-              </li>
-              <li>
-                <!-- Email -->
-                <span class="icon">
-                  <svg viewBox="0 0 24 24">
-                    <img src="img/material-symbols_mail.svg" alt="">
-                  </svg>
-                </span>
-                
-                &nbsp; ventas@minotaria.com.mx
-              </li>
-              <li>
-                <!-- Ubicación -->
-                <span class="icon">
-                  <img src="img/Vector.svg" alt="">
-                </span>
-               
-                &nbsp; Av. Revolución #2042, Álvaro Obregón, CDMX
-              </li>
-            </ul>
-          </div>
+      <div style="height: 0.5cm;"></div>
+      <hr style="border: none; height: 1px; background-color: white;">
       
-          <!-- Menús -->
-          <div class="footer-menu">
-            <h4 style="color: white; text-align: left; margin: 5px 0 25px;">Nosotros</h4>
-            <a href="#que-es">¿Qué es?</a><br>
-            <a href="#funcionalidad">Funcionalidad</a><br>
-            <a href="#caracteristicas">Características</a><br>
-            <a href="#beneficios">Beneficios</a><br>
-            <a href="#contacto">Contacto</a><br>
-          </div>
-          <div class="footer-menu">
-            <h4 style="color: white; text-align: left; margin: 5px 0 25px;">Legal</h4>
-            <a href="aviso_de_privacidad.html" target="_blank" rel="noopener noreferrer">
-              Política de privacidad
-            </a><br>
-            
-            <!-- <a href="#">Términos y condiciones</a><br>
-            <a href="#">Política de reembolso</a><br> -->
-          </div>
-          <div class="footer-menu">
-            <h4 style="color: white; text-align: left; margin: 5px 0 25px;">Links Rápidos</h4>
-            <a href="https://mideclaranot.com/dnot/index.php?s=" target="_blank" rel="noopener noreferrer">Noticias</a><br>
-            <!-- <a href="#">Descargas</a><br> -->
-            <a href="https://www.youtube.com/channel/UChcuAFX0Smhsd6WtZXFsw7Q" target="_blank" rel="noopener noreferrer">Youtube</a><br>
-          </div>
-      
-          <!-- Newsletter -->
-          <div class="newsletter-form">
-            <h4 style="color: white;">Suscríbete a nuestro boletín informativo</h4>
-          
-            <form id="newsletter-form" action="newsletter.php" method="POST">
-              <input type="email" name="email" placeholder="Tu correo electrónico" required>
-              <!-- <- Cambié el tipo de botón -->
-              <button type="button" id="newsletter-submit">Suscríbete</button>
-            </form>
-          
-            <p id="newsletter-msg" class="newsletter-note" style="color: white; margin-top:12px;"></p>
-            <p class="newsletter-note" style="color: white;">
-              * Te enviaremos actualizaciones semanales para una mejor gestión de sus herramientas.
-            </p>
-          </div>
-          
-          <script>
-          document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('newsletter-form');
-    const submitBtn = document.getElementById('newsletter-submit');
-  
-    if (!form || !submitBtn) {
-      console.error('No se encontró formulario o botón.');
-      return;
-    }
-  
-    // Toast pequeño inline (puedes usar tu función showToast del contacto)
-    function showToast(message, type = 'success', duration = 4000) {
-      const toast = document.createElement('div');
-      toast.textContent = message;
-      Object.assign(toast.style, {
-        position: 'fixed',
-        top: '1rem',
-        left: '50%',
-        transform: 'translateX(-50%) translateY(-8px)',
-        padding: '0.6rem 1rem',
-        borderRadius: '6px',
-        fontSize: '0.95rem',
-        color: '#fff',
-        opacity: '0',
-        transition: 'opacity 0.25s ease, transform 0.25s ease',
-        zIndex: '99999',
-        pointerEvents: 'none',
-        boxShadow: '0 8px 20px rgba(0,0,0,0.12)',
-        background: type === 'success' ? '#28a745' : '#dc3545'
-      });
-      document.body.appendChild(toast);
-      requestAnimationFrame(() => {
-        toast.style.opacity = '1';
-        toast.style.transform = 'translateX(-50%) translateY(0)';
-      });
-      setTimeout(() => {
-        toast.style.opacity = '0';
-        toast.style.transform = 'translateX(-50%) translateY(-8px)';
-        toast.addEventListener('transitionend', () => toast.remove(), { once: true });
-      }, duration);
-    }
-  
-    async function sendNewsletter() {
-      // validación simple del email
-      const emailInput = form.querySelector('input[name="email"]');
-      if (!emailInput || !emailInput.value.trim()) {
-        showToast('Introduce un correo válido.', 'error', 3000);
-        emailInput && emailInput.focus();
-        return;
-      }
-  
-      // bloquear botón para evitar dobles envíos
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Enviando…';
-  
-      try {
-        const formData = new FormData(form);
-        const res = await fetch(form.action, { method: 'POST', body: formData });
-  
-        if (!res.ok) {
-          const text = await res.text();
-          console.error('Respuesta no OK:', res.status, text);
-          showToast('Error del servidor. Revisa la consola (Network).', 'error', 5000);
-        } else {
-          // intentar parsear JSON (por si el servidor devolvió warnings, capturarlo)
-          const contentType = res.headers.get('content-type') || '';
-          if (contentType.indexOf('application/json') !== -1) {
-            const result = await res.json();
-            if (result.success) {
-              showToast(result.message || 'Te has suscrito correctamente.', 'success', 4500);
-              form.reset();
-            } else {
-              showToast(result.message || 'Error al suscribirse.', 'error', 5000);
-            }
-          } else {
-            // respuesta no JSON: mostrarla en consola y alerta genérica
-            const text = await res.text();
-            console.error('Respuesta no JSON:', text);
-            showToast('Respuesta inesperada del servidor. Mira consola.', 'error', 6000);
-          }
-        }
-      } catch (err) {
-        console.error('Fetch error:', err);
-        showToast('No se pudo conectar con el servidor. Revisa la consola.', 'error', 6000);
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Suscríbete';
-      }
-    }
-  
-    submitBtn.addEventListener('click', sendNewsletter);
-  });
-  
-          </script>
-          
-          
+      <div class="footer-container">
+        <!-- Logo + Contacto -->
+        <div class="footer-brand">
+          <img src="img/favicon.png" alt="Logo" class="footer-logo">
+          <br>
+          <ul class="contact-list">
+            <li>
+              <!-- Teléfono -->
+              <span class="icon">
+               <img src="img/telefono.svg" alt="">
+              </span>
+              
+              55‑4783‑3185
+            </li>
+            <br>
+            <li>
+              <!-- Email -->
+              <span class="icon">
+                  <img src="img/sobre.svg" alt="">
+              </span>
+              
+              ventas@minotaria.com.mx
+            </li>
+            <br>
+            <li>
+              <!-- Ubicación -->
+              <span class="icon">
+                <img src="img/mapa.svg" alt="">
+              </span>
+             
+            Av. Revolución #2042, Álvaro Obregón, CDMX
+            </li>
+          </ul>
         </div>
-      </footer>
-</body>
+    
+        <!-- Menús -->
+        <div class="footer-menu">
+          <h4 style="color: white; text-align: left; margin: 5px 0 25px;">Nosotros</h4>
+          <a href="#que-es">¿Qué es?</a><br>
+          <a href="#funcionalidad">Funcionalidad</a><br>
+          <a href="#caracteristicas">Características</a><br>
+          <a href="#beneficios">Beneficios</a><br>
+          <a href="#contacto">Contacto</a><br>
+        </div>
+        <div class="footer-menu noticias">
+          <h4 style="color: white; text-align: left; margin: 5px 0 25px;">Legal</h4>
+          <a href="aviso_de_privacidad.html">
+            Política de privacidad
+          </a><br>
+          
+          <!-- <a href="#">Términos y condiciones</a><br>
+          <a href="#">Política de reembolso</a><br> -->
+        </div>
+        <div class="footer-menu link">
+          <h4 style="color: white; text-align: left; margin: 5px 0 25px;">Links Rápidos</h4>
+          <a href="https://mideclaranot.com/dnot/index.php?s=" target="_blank" rel="noopener noreferrer">Noticias</a>
+          <!-- <a href="#">Descargas</a><br> -->
+          <a href="https://www.youtube.com/channel/UChcuAFX0Smhsd6WtZXFsw7Q" target="_blank" rel="noopener noreferrer">Youtube</a>
+        </div>
+    
+        <!-- Newsletter -->
+        <div class="newsletter-form">
+          <h4 style="color: white; font-size: 22px;">Suscríbete a nuestro boletín informativo</h4>
+          <div style="height: 0.5cm;"></div>
+          <form id="newsletter-form" action="newsletter.php" method="POST">
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            <!-- <- Cambié el tipo de botón -->
+            <button type="button" id="newsletter-submit">Suscríbete</button>
+          </form>
+        
+          <p id="newsletter-msg" class="newsletter-note" style="color: white; margin-top:12px;"></p>
+          <p class="newsletter-note" style="color: white;">
+            * Te enviaremos actualizaciones semanales para una mejor gestión de sus herramientas.
+          </p>
+        </div>
+        
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const form = document.getElementById('newsletter-form');
+          const submitBtn = document.getElementById('newsletter-submit');
 
+          if (!form || !submitBtn) {
+            console.error('No se encontró formulario o botón.');
+            return;
+          }
+
+          // Toast pequeño inline (puedes usar tu función showToast del contacto)
+          function showToast(message, type = 'success', duration = 4000) {
+            const toast = document.createElement('div');
+            toast.textContent = message;
+            Object.assign(toast.style, {
+              position: 'fixed',
+              top: '1rem',
+              left: '50%',
+              transform: 'translateX(-50%) translateY(-8px)',
+              padding: '0.6rem 1rem',
+              borderRadius: '6px',
+              fontSize: '0.95rem',
+              color: '#fff',
+              opacity: '0',
+              transition: 'opacity 0.25s ease, transform 0.25s ease',
+              zIndex: '99999',
+              pointerEvents: 'none',
+              boxShadow: '0 8px 20px rgba(0,0,0,0.12)',
+              background: type === 'success' ? '#28a745' : '#dc3545'
+            });
+            document.body.appendChild(toast);
+            requestAnimationFrame(() => {
+              toast.style.opacity = '1';
+              toast.style.transform = 'translateX(-50%) translateY(0)';
+            });
+            setTimeout(() => {
+              toast.style.opacity = '0';
+              toast.style.transform = 'translateX(-50%) translateY(-8px)';
+              toast.addEventListener('transitionend', () => toast.remove(), { once: true });
+            }, duration);
+          }
+
+          async function sendNewsletter() {
+            // validación simple del email
+            const emailInput = form.querySelector('input[name="email"]');
+            if (!emailInput || !emailInput.value.trim()) {
+              showToast('Introduce un correo válido.', 'error', 3000);
+              emailInput && emailInput.focus();
+              return;
+            }
+
+            // bloquear botón para evitar dobles envíos
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando…';
+
+            try {
+              const formData = new FormData(form);
+              const res = await fetch(form.action, { method: 'POST', body: formData });
+
+              if (!res.ok) {
+                const text = await res.text();
+                console.error('Respuesta no OK:', res.status, text);
+                showToast('Error del servidor. Revisa la consola (Network).', 'error', 5000);
+              } else {
+                // intentar parsear JSON (por si el servidor devolvió warnings, capturarlo)
+                const contentType = res.headers.get('content-type') || '';
+                if (contentType.indexOf('application/json') !== -1) {
+                  const result = await res.json();
+                  if (result.success) {
+                    showToast(result.message || 'Te has suscrito correctamente.', 'success', 4500);
+                    form.reset();
+                  } else {
+                    showToast(result.message || 'Error al suscribirse.', 'error', 5000);
+                  }
+                } else {
+                  // respuesta no JSON: mostrarla en consola y alerta genérica
+                  const text = await res.text();
+                  console.error('Respuesta no JSON:', text);
+                  showToast('Respuesta inesperada del servidor. Mira consola.', 'error', 6000);
+                }
+              }
+            } catch (err) {
+              console.error('Fetch error:', err);
+              showToast('No se pudo conectar con el servidor. Revisa la consola.', 'error', 6000);
+            } finally {
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Suscríbete';
+            }
+          }
+
+          submitBtn.addEventListener('click', sendNewsletter);
+        });
+
+        </script>
+      </div>
+    </footer>
+</body>
 </html>
