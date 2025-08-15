@@ -1,0 +1,117 @@
+/* *************************************** */
+/* ********* QUE ES MINOTARIA ************ */
+/* *************************************** */
+
+.minotaria {
+  width: 51.875rem; /* 830px */
+  height: auto;
+  padding: 1.25rem; /* 20px */
+  gap: 1.2325rem; /* 19.72px → aproximado */
+  opacity: 1;
+  margin: 0 auto; /* centra horizontalmente */
+  text-align: center;
+}
+
+.que-es {
+  display: flex;
+  justify-content: center;
+  gap: 3.75rem !important; /* 60px */
+}
+
+.main-title {
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 57px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #003899;
+}
+
+.main-desc {
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 26px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #252525;
+}
+
+
+/* *************************************** */
+/* ************** DIAGRAMA *************** */
+/* *************************************** */
+
+.diagramaUIF {
+  gap: 3.75rem !important; /* 60px */
+}
+
+.diagram-box {
+  width: 72.25rem; /* 1156px */
+  height: 39.875rem; /* 638px */
+  margin: 0 auto;
+  padding-top: 2.5rem; /* 40px */
+  padding-bottom: 2.5rem; /* 40px */
+}
+
+.diagram-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ********************************************** */
+/* MODO RESPONSIVE PARA DIFERENTES DISPOSITIVOS */
+/* ********************************************** */
+
+/* Laptops y Desktops Pequeños (1200px) */
+@media (max-width: 1200px) {
+    .diagram-box {
+        width: 95%;
+    }
+}
+
+/* Tablets en horizontal y vertical (1024px) */
+@media (max-width: 1024px) {
+    .minotaria {
+        width: 90%;
+    }
+    .diagram-box {
+        width: 90%;
+        height: 500px; /* Altura ajustada para tablets */
+    }
+}
+
+/* Móviles Grandes y Tablets en vertical (768px) */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 40px;
+    }
+
+    .main-desc {
+        font-size: 18px;
+    }
+
+    .diagram-box {
+        height: 400px; /* Menos altura para móviles grandes */
+    }
+}
+
+/* Móviles Pequeños (480px) */
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 32px;
+    }
+
+    .main-desc {
+        font-size: 16px;
+    }
+
+    .diagram-box {
+        width: 95%;
+        height: 300px; /* Altura original para móviles */
+    }
+}
+
+

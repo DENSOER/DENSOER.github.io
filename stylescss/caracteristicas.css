@@ -1,0 +1,170 @@
+.caracteristicas {
+  gap: 60px !important;
+}
+
+.caracteristicas_text {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin: 0 auto 10px auto; /* ↓ reduce espacio inferior */
+  padding: 0 15px;
+}
+
+.section {
+  padding: 60px 20px;
+  text-align: center;
+  /* background-color: #f9f9f9; */
+  /* border-bottom: 5px solid #fff; */
+
+}
+
+.section-title {
+  
+  font-style: Bold;
+  font-size: 57px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #003799;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  
+ 
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 46px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #003899;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 72.3041rem;
+  height: 20.5778rem;
+  gap: 20px;
+  opacity: 1;
+  margin: 0 auto;
+  padding-top: 0; /* ← antes estaba en 40px */
+}
+
+.feature-card {
+  width: 23.243rem !important;
+  height: 18.203rem !important;
+  padding-top: 12.1px;
+  padding-right: 28.02px;
+  padding-bottom: 40px;
+  padding-left: 28.02px;
+  opacity: 1;
+  border-radius: 13.19px;
+  background-color: #F5F5F7;
+
+  display: flex;
+  flex-direction: column; /* Apila verticalmente */
+  justify-content: flex-start; /* Arriba el resto */
+  
+}
+
+.feature-num {
+  font-size: 2.9rem; /* 46.4px */
+  font-weight: bold;
+  color: #ccc;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.feature-card h3 {
+  font-size: 1.625rem; /* 26px */
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 1.125rem; /* 18px */
+  color: #333;
+  line-height: 1.5;
+  
+  font-weight: 400;
+  font-style: Regular;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-top: auto; 
+  
+
+}
+
+
+
+/* ********************************************** */
+/* MODO RESPONSIVE PARA DIFERENTES DISPOSITIVOS */
+/* ********************************************** */
+
+/* Laptops y Desktops Pequeños (1200px) */
+@media (max-width: 1200px) {
+    .features-grid {
+        width: 95%;
+        gap: 15px;
+    }
+    .feature-card {
+        padding: 20px;
+    }
+}
+
+/* Tablets en horizontal y vertical (1024px) */
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+        height: auto;
+        gap: 20px;
+    }
+    .feature-card {
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 0; /* El gap se encarga del espaciado */
+    }
+}
+
+/* Móviles Grandes y Tablets en vertical (768px) */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 40px;
+    }
+
+    .section-subtitle {
+        font-size: 30px;
+        padding: 0 15px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+}
+
+/* Móviles Pequeños (480px) */
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 32px;
+    }
+
+    .section-subtitle {
+        font-size: 24px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .feature-card p {
+        font-size: 1rem;
+    }
+}
+

@@ -1,0 +1,153 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+#beneficios { 
+  padding: 50px 20px;
+  background: #F5F5F7;
+  /* border-bottom: 5px solid #F5F5F7; */
+  margin-bottom: 60px !important;
+  gap: 60px !important;
+}
+
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.261rem; /* 20.17px convertido a rem */
+  width: 72.2506rem;
+  height: 29.3332rem;
+  margin: auto;
+  opacity: 1;
+  
+}
+
+
+.benefit-card {
+  width: 23.243rem;
+  height: 31.3332rem;
+  transform: rotate(0deg);
+  opacity: 1;
+  border-radius: 0.8244rem;
+  padding-top: 0.7563rem;
+  padding-right: 1.25rem;
+  padding-bottom: 1.5131rem;
+  padding-left: 1.25rem;
+
+  background-color: #F5F5F7;
+  box-shadow: 0 0 0 1px #E0E0E0 inset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 1;
+  
+}
+
+.benefit-num {
+  color: #A4A4A4;
+  font-weight: bold;
+  margin-bottom: 10px;
+  
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 2.9rem; /* 46.4px */
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.benefit-card h3 {
+  font-size: 1.64rem; /* 26.23px */
+  font-weight: bold;
+  
+  font-weight: 700;
+  font-style: Bold;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.benefit-card p {
+  font-size: 1.125rem; /* 16.14px */
+  
+  font-weight: 400;
+  font-style: Regular;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #000000;
+}
+
+.benefit-icon img {
+  width: 215.91px;
+  height: 215.90px;
+  display: block;
+  margin-top: auto;
+}
+
+
+
+/* ********************************************** */
+/* MODO RESPONSIVE PARA DIFERENTES DISPOSITIVOS */
+/* ********************************************** */
+
+/* Laptops y Desktops Pequeños (1200px) */
+@media (max-width: 1200px) {
+    .benefits-grid {
+        width: 95%;
+        gap: 15px;
+    }
+    .benefit-card {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+/* Tablets en horizontal y vertical (1024px) */
+@media (max-width: 1024px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+        height: auto;
+        gap: 20px;
+    }
+    .benefit-card {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0;
+    }
+}
+
+/* Móviles Grandes y Tablets en vertical (768px) */
+@media (max-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+    .benefit-card {
+        margin-bottom: 20px;
+    }
+    .benefit-icon img {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* Móviles Pequeños (480px) */
+@media (max-width: 480px) {
+    #beneficios {
+        padding: 40px 15px;
+    }
+    .benefit-card h3 {
+        font-size: 1.4rem;
+    }
+    .benefit-card p {
+        font-size: 1rem;
+    }
+    .benefit-icon img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+

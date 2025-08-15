@@ -1,0 +1,168 @@
+.titulosistema{
+  padding-top: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 57px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+
+  
+}
+
+.marcaregistrada{
+  font-size: 30px;
+  vertical-align: top;
+}
+
+/* logo texto */
+.imgminotaria {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+p {
+  
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.main-btn.primary {
+  width: 127px;
+  height: 43px;
+  opacity: 1;
+  padding-top: 11px;
+  padding-right: 21px;
+  padding-bottom: 11px;
+  padding-left: 21px;
+  gap: 24px;
+  border-radius: 30px;
+  background-color: #003799;
+  color: white;
+  text-decoration: none;
+
+}
+
+.main-btn.secondary {
+  width: 115px;
+  height: 43px;
+  opacity: 1;
+  padding-top: 11px;
+  padding-right: 21px;
+  padding-bottom: 11px;
+  padding-left: 21px;
+  gap: 12px;
+  border-radius: 30px;
+  border-width: 1px;
+  border: 1px solid #003799;
+  color: #003799;
+  text-decoration: none;
+  
+}
+
+.main-btn.secondary:hover{
+  background-color: #003799;
+  color: white;
+}
+
+
+.hero-img {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img img {
+  max-width: 816.4218139648438px;
+  height: 577.0399780273438px;
+}
+
+/* ********************************************** */
+/* MODO RESPONSIVE PARA DIFERENTES DISPOSITIVOS */
+/* ********************************************** */
+
+/* Laptops y Desktops Pequeños (1200px) */
+@media (max-width: 1200px) {
+    .hero-img img {
+        max-width: 90%;
+        height: auto;
+    }
+}
+
+/* Tablets en horizontal y vertical (1024px) */
+@media (max-width: 1024px) {
+    .titulosistema {
+        font-size: 50px;
+    }
+    p {
+        font-size: 24px;
+        padding: 0 20px;
+    }
+    .hero-img img {
+        max-width: 95%;
+    }
+}
+
+/* Móviles Grandes y Tablets en vertical (768px) */
+@media (max-width: 768px) {
+    .titulosistema {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    .btns {
+        /* Se elimina flex-direction: column para que se mantengan en fila */
+        align-items: center;
+        justify-content: center; /* Centra los botones horizontalmente */
+        flex-wrap: wrap; /* Permite que los botones pasen a la siguiente línea si no caben */
+        gap: 15px;
+    }
+
+    .main-btn.primary, .main-btn.secondary {
+        width: auto; /* Ancho automático basado en el contenido */
+        padding: 11px 25px; /* Ajuste de padding */
+        flex-grow: 1; /* Permite que los botones crezcan si hay espacio */
+        flex-basis: 120px; /* Base de ancho para cada botón */
+        max-width: 130px;
+        text-align: center;
+    }
+
+    .hero-img img {
+        width: 90%;
+        height: auto;
+    }
+}
+
+/* Móviles Pequeños (480px) */
+@media (max-width: 480px) {
+    .titulosistema {
+        font-size: 32px;
+    }
+    .marcaregistrada {
+        font-size: 20px;
+    }
+    p {
+        font-size: 18px;
+    }
+    .main-btn.primary, .main-btn.secondary {
+        width: 80%;
+    }
+}
